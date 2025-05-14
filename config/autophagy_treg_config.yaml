@@ -1,0 +1,187 @@
+# 自噬和调节性T细胞文献分析配置 文件名尽量不要修改，免得程序运行出错
+domain: "autophagy-treg"
+
+paths:
+  logs: "logs"
+  output: "output"
+  analysis:
+    wordcloud: "output/wordcloud"
+    trends: "output/trends"
+  knowledge_graph: "output/knowledge_graph"
+
+file_names:
+  data: "data/Autophagy_Treg_literature.csv"
+  analysis: "data/analyzed_literature.csv"
+
+entities: #都可以修改
+  autophagy_terms:
+    - autophagy
+    - autophagic
+    - autophagosome
+    - autolysosome
+    - mitophagy
+    - LC3
+    - Beclin
+    - ATG
+    - SQSTM1/p62
+    - mTOR
+    - ULK1
+    - AMPK
+    - rapamycin
+    - bafilomycin
+    - phagophore
+    - pexophagy
+    - xenophagy
+    - microautophagy
+    - chaperone-mediated autophagy
+    - ATG5
+    - ATG7
+    - ATG12
+    - ATG16L1
+
+  treg_terms:
+    - regulatory T cell
+    - regulatory T cells
+    - Treg
+    - Tregs
+    - FOXP3
+    - CD4+CD25+
+    - CTLA-4
+    - IL-10
+    - TGF-beta
+    - immunosuppression
+    - immune tolerance
+    - self-tolerance
+    - suppressive
+    - suppressor T cell
+    - T-regulatory
+    - CD4+CD25+FOXP3+
+    - GITR
+    - PD-1
+    - IL-2R
+    - LAG-3
+    - Helios
+    - nTreg
+    - iTreg
+    - pTreg
+
+  disease_terms:
+    - autoimmune
+    - autoimmunity
+    - inflammation
+    - cancer
+    - tumor
+    - malignancy
+    - infection
+    - infectious
+    - allergy
+    - allergic
+    - asthma
+    - colitis
+    - arthritis
+    - lupus
+    - diabetes
+    - multiple sclerosis
+    - IBD
+    - transplantation
+    - GVHD
+    - graft-versus-host
+    - rejection
+
+  cell_types:
+    - T cell
+    - T lymphocyte
+    - B cell
+    - macrophage
+    - dendritic cell
+    - DC
+    - neutrophil
+    - monocyte
+    - lymphocyte
+    - NK cell
+    - natural killer
+    - eosinophil
+    - basophil
+    - mast cell
+
+  molecules:
+    - cytokine
+    - chemokine
+    - antibody
+    - receptor
+    - ligand
+    - transcription factor
+    - kinase
+    - phosphatase
+    - enzyme
+    - adaptor protein
+    - membrane protein
+    - secreted protein
+
+# 关系定义
+relations:
+  activates:
+    variants: [activates, activate, activating, activated, activation, induces, induce, inducing, induced, induction, upregulates, upregulate, upregulating, upregulated, upregulation, promotes, promote, promoting, promoted, promotion, stimulates, stimulate, stimulating, stimulated, stimulation, enhances, enhance, enhancing, enhanced, enhancement]
+    type: "positive_regulation"
+    
+  inhibits:
+    variants: [inhibits, inhibit, inhibiting, inhibited, inhibition, suppresses, suppress, suppressing, suppressed, suppression, blocks, block, blocking, blocked, blockade, decreases, decrease, decreasing, decreased, downregulates, downregulate, downregulating, downregulated, downregulation, represses, repress, repressing, repressed, repression]
+    type: "negative_regulation"
+    
+  regulates:
+    variants: [regulates, regulate, regulating, regulated, regulation, modulates, modulate, modulating, modulated, modulation, controls, control, controlling, controlled, mediates, mediate, mediating, mediated, mediation]
+    type: "regulation"
+
+  associated_with:
+    variants: [associated with, correlates with, correlated with, correlates to, correlation with, linked to, linked with, connection with, related to, relationship with]
+    type: "association"
+    
+  converts_to:
+    variants: [converts to, convert to, conversion to, transforms into, transform into, transformation into, differentiates into, differentiate into, differentiation into, matures into, mature into, maturation into]
+    type: "conversion"
+
+performance:
+  entity_recognition:
+    max_term_length: 45
+    nested_entity_handling: merge
+    priority_order:
+      - treg_terms
+      - autophagy_terms
+      - disease_terms
+      - cell_types
+      - molecules
+
+visualization:
+  node_size_formula: "log(weight) * 8 + 5"
+  edge_width_range: [1, 5]
+  
+  color_scheme:
+    # 实体类型颜色定义
+    entity_types:
+      GENE: "#FF7F0E"       # 橙色
+      CHEMICAL: "#2CA02C"   # 绿色
+      DISEASE: "#D62728"    # 红色
+      CELL_TYPE: "#1F77B4"   # 蓝色
+      DEFAULT: "#9467BD"     # 紫色 (默认/未识别)
+    
+    # 关系类型颜色定义  
+    relation_types:
+      positive_regulation: "#00a300"  # 深绿色 - 激活/诱导关系
+      negative_regulation: "#cc0000"  # 深红色 - 抑制关系
+      regulation: "#0066cc"           # 蓝色 - 一般调控关系
+      DEFAULT: "#999999"              # 灰色 - 默认/未分类关系
+      
+  # 节点和边的样式设置
+  styles:
+    node:
+      border_width: 2
+      border_width_selected: 3
+      shape: "dot"  # 可选: dot, ellipse, triangle, square 等
+    edge:
+      smooth: false
+      arrows: false
+      dashes: false
+
+  title: "自噬与调节性T细胞关系知识图谱"
+  subtitle: "基于科学文献分析"
+  description: "本知识图谱展示了自噬相关组分与调节性T细胞之间的潜在联系和相互作用，数据来源于PubMed文献" 

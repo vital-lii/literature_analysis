@@ -1,0 +1,5509 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns:viz="http://www.gexf.net/1.2draft/viz" xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2025-05-14">
+    <creator>NetworkX 3.4.2</creator>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static" name="">
+    <attributes mode="static" class="edge">
+      <attribute id="2" title="width" type="long" />
+    </attributes>
+    <attributes mode="static" class="node">
+      <attribute id="0" title="node_type" type="string" />
+      <attribute id="1" title="category" type="string" />
+    </attributes>
+    <nodes>
+      <node id="FOXP3" label="FOXP3">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="104" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="GENE" />
+          <attvalue for="1" value="GENE" />
+        </attvalues>
+      </node>
+      <node id="macrophages" label="macrophages">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="38" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="foxp3" label="foxp3">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="72" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="tregs" label="tregs">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="74" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="macrophage" label="macrophage">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="54" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="LC3" label="LC3">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="100" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="GENE" />
+          <attvalue for="1" value="GENE" />
+        </attvalues>
+      </node>
+      <node id="lc3" label="lc3">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="60" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="protein" label="protein">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="66" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="BECN1" label="BECN1">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="66" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="GENE" />
+          <attvalue for="1" value="GENE" />
+        </attvalues>
+      </node>
+      <node id="autophagy" label="autophagy">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="112" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="LPS" label="LPS">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="46" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="sqstm1/p62" label="sqstm1/p62">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="22" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="SQSTM1" label="SQSTM1">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="82" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="GENE" />
+          <attvalue for="1" value="GENE" />
+        </attvalues>
+      </node>
+      <node id="p62" label="p62">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="78" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="GENE" />
+          <attvalue for="1" value="GENE" />
+        </attvalues>
+      </node>
+      <node id="tumor" label="tumor">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="82" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="regulatory T cell" label="regulatory T cell">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="28" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="Treg" label="Treg">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="98" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="regulatory t cell" label="regulatory t cell">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="28" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="treg" label="treg">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="98" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="T cell" label="T cell">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="56" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="Beclin" label="Beclin">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="56" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="beclin" label="beclin">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="56" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="peptide" label="peptide">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="2" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="inflammation" label="inflammation">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="68" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="IBD" label="IBD">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="56" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="T cells" label="T cells">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="72" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="ibd" label="ibd">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="56" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="ULK1" label="ULK1">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="70" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="GENE" />
+          <attvalue for="1" value="GENE" />
+        </attvalues>
+      </node>
+      <node id="AMPK" label="AMPK">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="76" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="GENE" />
+          <attvalue for="1" value="GENE" />
+        </attvalues>
+      </node>
+      <node id="mTOR" label="mTOR">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="90" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="GENE" />
+          <attvalue for="1" value="GENE" />
+        </attvalues>
+      </node>
+      <node id="ATG" label="ATG">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="68" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="GENE" />
+          <attvalue for="1" value="GENE" />
+        </attvalues>
+      </node>
+      <node id="inflammatory bowel disease" label="inflammatory bowel disease">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="54" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="colitis" label="colitis">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="54" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="dendritic cells" label="dendritic cells">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="54" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="B cell" label="B cell">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="50" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="DCs" label="DCs">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="50" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="atg16l1" label="atg16l1">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="46" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="ampk" label="ampk">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="44" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="rapamycin" label="rapamycin">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="48" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="mtor" label="mtor">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="52" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="atg" label="atg">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="42" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="ulk1" label="ulk1">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="44" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="infectious" label="infectious">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="6" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="neutrophil" label="neutrophil">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="8" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="cancer" label="cancer">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="40" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="neutrophils" label="neutrophils">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="16" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="autoimmune" label="autoimmune">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="42" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="infection" label="infection">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="44" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="lymphocytes" label="lymphocytes">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="12" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="macroautophagy" label="macroautophagy">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="6" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="lysosome" label="lysosome">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="4" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="autophagosome" label="autophagosome">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="8" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="MAP1LC3" label="MAP1LC3">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="20" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="GENE" />
+          <attvalue for="1" value="GENE" />
+        </attvalues>
+      </node>
+      <node id="CD8" label="CD8">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="32" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="mitophagy" label="mitophagy">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="18" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="regulatory T cells" label="regulatory T cells">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="44" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="regulatory t cells" label="regulatory t cells">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="44" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="atg5" label="atg5">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="10" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="natural killer" label="natural killer">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="2" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="PD-1" label="PD-1">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="22" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="pd-1" label="pd-1">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="28" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="CTLA-4" label="CTLA-4">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="6" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="ctla-4" label="ctla-4">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="2" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="autoimmunity" label="autoimmunity">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="32" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="CD4" label="CD4">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="56" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="cytokine" label="cytokine">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="30" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="IFN-γ" label="IFN-γ">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="22" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="TNF-α" label="TNF-α">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="8" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="antibody" label="antibody">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="16" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="eosinophils" label="eosinophils">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="8" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="allergic" label="allergic">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="4" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="IL-6" label="IL-6">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="28" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="IL-10" label="IL-10">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="38" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="eosinophil" label="eosinophil">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="6" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="il-10" label="il-10">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="32" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="suppressive" label="suppressive">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="10" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="self-tolerance" label="self-tolerance">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="4" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="lymphocyte" label="lymphocyte">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="14" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="chloroquine" label="chloroquine">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="2" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="autophagic" label="autophagic">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="26" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="CD4+" label="CD4+">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="16" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="immune tolerance" label="immune tolerance">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="6" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="asthma" label="asthma">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="8" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="transplantation" label="transplantation">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="22" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="gvhd" label="gvhd">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="24" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="atg7" label="atg7">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="22" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="JAK3" label="JAK3">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="12" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="GENE" />
+          <attvalue for="1" value="GENE" />
+        </attvalues>
+      </node>
+      <node id="malignancy" label="malignancy">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="2" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="allergy" label="allergy">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="2" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="graft-versus-host" label="graft-versus-host">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="8" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="lupus" label="lupus">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="20" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="immunosuppression" label="immunosuppression">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="12" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="helios" label="helios">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="6" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="rejection" label="rejection">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="14" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="t-regulatory" label="t-regulatory">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="4" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="CD25" label="CD25">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="26" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="GENE" />
+          <attvalue for="1" value="GENE" />
+        </attvalues>
+      </node>
+      <node id="3-methyladenine" label="3-methyladenine">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="2" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="TGF-β" label="TGF-β">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="18" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="diabetes" label="diabetes">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="2" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="arthritis" label="arthritis">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="16" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="DISEASE" />
+          <attvalue for="1" value="DISEASE" />
+        </attvalues>
+      </node>
+      <node id="bafilomycin" label="bafilomycin">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="2" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="B cells" label="B cells">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="6" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="monocytes" label="monocytes">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="4" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="IL-1β" label="IL-1β">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="2" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="chemokine" label="chemokine">
+        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:size value="2" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CHEMICAL" />
+          <attvalue for="1" value="CHEMICAL" />
+        </attvalues>
+      </node>
+      <node id="STAT3" label="STAT3">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="6" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="GENE" />
+          <attvalue for="1" value="GENE" />
+        </attvalues>
+      </node>
+      <node id="cd4+cd25+" label="cd4+cd25+">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="4" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="CD4+CD25+" label="CD4+CD25+">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="4" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="dendritic cell" label="dendritic cell">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="4" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+      <node id="CD8+" label="CD8+">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="2" />
+        <viz:position x="0" y="0" z="0" />
+        <attvalues>
+          <attvalue for="0" value="CELL_TYPE" />
+          <attvalue for="1" value="CELL_TYPE" />
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge source="FOXP3" target="macrophages" id="0" weight="5">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="foxp3" id="1" weight="26">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="tregs" id="2" weight="8">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="macrophage" id="3" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="LC3" id="4" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="lc3" id="5" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="protein" id="6" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="ULK1" id="7" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="atg16l1" id="8" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="ampk" id="9" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="rapamycin" id="10" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="mtor" id="11" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="ATG" id="12" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="Beclin" id="13" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="AMPK" id="14" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="beclin" id="15" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="autophagy" id="16" weight="5">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="SQSTM1" id="17" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="mTOR" id="18" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="atg" id="19" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="ulk1" id="20" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="LPS" id="21" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="inflammatory bowel disease" id="22" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="tumor" id="23" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="IBD" id="24" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="colitis" id="25" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="ibd" id="26" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="dendritic cells" id="27" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="B cell" id="28" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="Treg" id="29" weight="13">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="treg" id="30" weight="13">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="DCs" id="31" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="cancer" id="32" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="regulatory T cells" id="33" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="regulatory t cells" id="34" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="T cells" id="35" weight="5">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="IL-10" id="36" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="cytokine" id="37" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="eosinophil" id="38" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="il-10" id="39" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="suppressive" id="40" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="atg7" id="41" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="helios" id="42" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="CD8" id="43" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="CD4" id="44" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="infection" id="45" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="autophagic" id="46" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="autoimmune" id="47" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="inflammation" id="48" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="regulatory T cell" id="49" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="regulatory t cell" id="50" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FOXP3" target="T cell" id="51" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophages" target="LC3" id="52" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="macrophages" target="lc3" id="53" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="macrophages" target="protein" id="54" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="macrophages" target="autophagy" id="55" weight="7">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="macrophages" target="LPS" id="56" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophages" target="BECN1" id="57" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophages" target="macroautophagy" id="58" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophages" target="lysosome" id="59" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophages" target="autophagosome" id="60" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophages" target="sqstm1/p62" id="61" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophages" target="p62" id="62" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="macrophages" target="SQSTM1" id="63" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="macrophages" target="inflammation" id="64" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="macrophages" target="tumor" id="65" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophages" target="cancer" id="66" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophages" target="IL-10" id="67" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophages" target="CD4" id="68" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophages" target="arthritis" id="69" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="LC3" id="70" weight="6">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="lc3" id="71" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="protein" id="72" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="ULK1" id="73" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="atg16l1" id="74" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="ampk" id="75" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="rapamycin" id="76" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="mtor" id="77" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="ATG" id="78" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="Beclin" id="79" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="AMPK" id="80" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="beclin" id="81" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="autophagy" id="82" weight="5">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="SQSTM1" id="83" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="mTOR" id="84" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="atg" id="85" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="ulk1" id="86" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="LPS" id="87" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="BECN1" id="88" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="inflammatory bowel disease" id="89" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="tumor" id="90" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="IBD" id="91" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="colitis" id="92" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="ibd" id="93" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="cancer" id="94" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="IL-10" id="95" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="cytokine" id="96" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="atg7" id="97" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="JAK3" id="98" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="CD8" id="99" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="CD4" id="100" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="infection" id="101" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="autophagic" id="102" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="autoimmune" id="103" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="foxp3" target="inflammation" id="104" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="cancer" id="105" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="autophagy" id="106" weight="21">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="antibody" id="107" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="chloroquine" id="108" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="autoimmune" id="109" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="gvhd" id="110" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="LC3" id="111" weight="6">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="lc3" id="112" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="JAK3" id="113" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="autoimmunity" id="114" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="malignancy" id="115" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="allergy" id="116" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="graft-versus-host" id="117" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="transplantation" id="118" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="ATG" id="119" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="atg" id="120" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="atg7" id="121" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="inflammation" id="122" weight="7">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="LPS" id="123" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="CD4" id="124" weight="6">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="protein" id="125" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="tumor" id="126" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="autophagic" id="127" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="mitophagy" id="128" weight="5">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="CD25" id="129" weight="6">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="rapamycin" id="130" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="3-methyladenine" id="131" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="PD-1" id="132" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="IL-6" id="133" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="CD8" id="134" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="p62" id="135" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="TGF-β" id="136" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="IL-10" id="137" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="arthritis" id="138" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="rejection" id="139" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="tregs" target="infection" id="140" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="ULK1" id="141" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="LC3" id="142" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="atg16l1" id="143" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="ampk" id="144" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="rapamycin" id="145" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="mtor" id="146" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="ATG" id="147" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="Beclin" id="148" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="AMPK" id="149" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="beclin" id="150" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="lc3" id="151" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="autophagy" id="152" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="protein" id="153" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="SQSTM1" id="154" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="mTOR" id="155" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="atg" id="156" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="ulk1" id="157" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="LPS" id="158" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="BECN1" id="159" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="inflammatory bowel disease" id="160" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="tumor" id="161" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="IBD" id="162" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="colitis" id="163" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="ibd" id="164" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="infectious" id="165" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="macrophage" target="infection" id="166" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="LC3" id="167" weight="12">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="lc3" id="168" weight="12">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="protein" id="169" weight="5">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="BECN1" id="170" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="autophagy" id="171" weight="6">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="LPS" id="172" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="ULK1" id="173" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="AMPK" id="174" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="SQSTM1" id="175" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="mTOR" id="176" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="ATG" id="177" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="inflammatory bowel disease" id="178" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="tumor" id="179" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="IBD" id="180" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="colitis" id="181" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="ibd" id="182" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="dendritic cells" id="183" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="B cell" id="184" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="Treg" id="185" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="treg" id="186" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="DCs" id="187" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="atg16l1" id="188" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="ampk" id="189" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="rapamycin" id="190" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="mtor" id="191" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="Beclin" id="192" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="beclin" id="193" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="atg" id="194" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="ulk1" id="195" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="T cells" id="196" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="autophagic" id="197" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="JAK3" id="198" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="p62" id="199" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="inflammation" id="200" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="pd-1" id="201" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="regulatory T cells" id="202" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="regulatory t cells" id="203" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="PD-1" id="204" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="IL-6" id="205" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="CD8" id="206" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="TGF-β" id="207" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="CD4" id="208" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="il-10" id="209" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="LC3" target="IL-10" id="210" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="BECN1" id="211" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="AMPK" id="212" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="ULK1" id="213" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="SQSTM1" id="214" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="mTOR" id="215" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="ATG" id="216" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="inflammatory bowel disease" id="217" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="tumor" id="218" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="IBD" id="219" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="colitis" id="220" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="ibd" id="221" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="dendritic cells" id="222" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="B cell" id="223" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="Treg" id="224" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="treg" id="225" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="DCs" id="226" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="T cells" id="227" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="JAK3" id="228" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="p62" id="229" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="inflammation" id="230" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="pd-1" id="231" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="regulatory T cells" id="232" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="regulatory t cells" id="233" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="lc3" target="il-10" id="234" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="BECN1" id="235" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="SQSTM1" id="236" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="p62" id="237" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="tumor" id="238" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="regulatory T cell" id="239" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="Treg" id="240" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="regulatory t cell" id="241" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="treg" id="242" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="T cell" id="243" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="AMPK" id="244" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="ULK1" id="245" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="mTOR" id="246" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="ATG" id="247" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="inflammatory bowel disease" id="248" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="IBD" id="249" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="colitis" id="250" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="ibd" id="251" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="dendritic cells" id="252" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="B cell" id="253" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="DCs" id="254" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="pd-1" id="255" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="autoimmunity" id="256" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="inflammation" id="257" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="lymphocyte" id="258" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="suppressive" id="259" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="T cells" id="260" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="protein" target="lupus" id="261" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="autophagy" id="262" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="LPS" id="263" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="ULK1" id="264" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="atg16l1" id="265" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="ampk" id="266" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="rapamycin" id="267" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="mtor" id="268" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="ATG" id="269" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="Beclin" id="270" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="AMPK" id="271" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="beclin" id="272" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="SQSTM1" id="273" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="mTOR" id="274" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="atg" id="275" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="ulk1" id="276" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="inflammatory bowel disease" id="277" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="tumor" id="278" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="IBD" id="279" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="colitis" id="280" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="ibd" id="281" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="dendritic cells" id="282" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="B cell" id="283" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="Treg" id="284" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="treg" id="285" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="DCs" id="286" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="IL-10" id="287" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="BECN1" target="il-10" id="288" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="inflammation" id="289" weight="18">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="IBD" id="290" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="ibd" id="291" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="AMPK" id="292" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="ULK1" id="293" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="SQSTM1" id="294" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="mTOR" id="295" weight="10">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="ATG" id="296" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="inflammatory bowel disease" id="297" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="tumor" id="298" weight="6">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="colitis" id="299" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="dendritic cells" id="300" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="B cell" id="301" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="Treg" id="302" weight="23">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="treg" id="303" weight="23">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="DCs" id="304" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="neutrophil" id="305" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="T cell" id="306" weight="20">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="infection" id="307" weight="5">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="lymphocytes" id="308" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="p62" id="309" weight="5">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="MAP1LC3" id="310" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="regulatory T cell" id="311" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="regulatory t cell" id="312" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="T cells" id="313" weight="27">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="natural killer" id="314" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="autoimmunity" id="315" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="regulatory T cells" id="316" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="regulatory t cells" id="317" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="cancer" id="318" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="neutrophils" id="319" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="allergic" id="320" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="eosinophils" id="321" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="lymphocyte" id="322" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="suppressive" id="323" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="CD4+" id="324" weight="5">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="immune tolerance" id="325" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="asthma" id="326" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="gvhd" id="327" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="autoimmune" id="328" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="transplantation" id="329" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="lupus" id="330" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="il-10" id="331" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="t-regulatory" id="332" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="pd-1" id="333" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="STAT3" id="334" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="infectious" id="335" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="rejection" id="336" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autophagy" target="dendritic cell" id="337" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LPS" target="AMPK" id="338" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LPS" target="ULK1" id="339" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LPS" target="SQSTM1" id="340" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LPS" target="mTOR" id="341" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LPS" target="ATG" id="342" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LPS" target="inflammatory bowel disease" id="343" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LPS" target="tumor" id="344" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LPS" target="IBD" id="345" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LPS" target="colitis" id="346" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LPS" target="ibd" id="347" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LPS" target="dendritic cells" id="348" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LPS" target="B cell" id="349" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LPS" target="Treg" id="350" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LPS" target="treg" id="351" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LPS" target="DCs" id="352" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="LPS" target="inflammation" id="353" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="sqstm1/p62" target="SQSTM1" id="354" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="sqstm1/p62" target="p62" id="355" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="sqstm1/p62" target="tumor" id="356" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="sqstm1/p62" target="regulatory T cell" id="357" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="sqstm1/p62" target="Treg" id="358" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="sqstm1/p62" target="regulatory t cell" id="359" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="sqstm1/p62" target="treg" id="360" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="sqstm1/p62" target="T cell" id="361" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="sqstm1/p62" target="inflammation" id="362" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sqstm1/p62" target="MAP1LC3" id="363" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="p62" id="364" weight="6">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="Beclin" id="365" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="beclin" id="366" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="SQSTM1" id="367" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="tumor" id="368" weight="6">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="regulatory T cell" id="369" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="Treg" id="370" weight="8">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="regulatory t cell" id="371" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="treg" id="372" weight="8">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="T cell" id="373" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="ULK1" id="374" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="atg16l1" id="375" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="ampk" id="376" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="rapamycin" id="377" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="mtor" id="378" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="ATG" id="379" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="AMPK" id="380" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="mTOR" id="381" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="inflammatory bowel disease" id="382" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="IBD" id="383" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="colitis" id="384" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="ibd" id="385" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="dendritic cells" id="386" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="B cell" id="387" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="DCs" id="388" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="atg" id="389" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="ulk1" id="390" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="inflammation" id="391" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="SQSTM1" target="MAP1LC3" id="392" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="p62" id="393" weight="9">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="tumor" id="394" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="regulatory T cell" id="395" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="Treg" id="396" weight="6">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="regulatory t cell" id="397" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="treg" id="398" weight="6">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="T cell" id="399" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="Beclin" id="400" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="beclin" id="401" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="inflammation" id="402" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="MAP1LC3" id="403" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="IL-6" id="404" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="ampk" id="405" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="rapamycin" id="406" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="mtor" id="407" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="AMPK" id="408" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="mTOR" id="409" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="TNF-α" id="410" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="autophagosome" id="411" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="CD4" id="412" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="autophagic" id="413" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="PD-1" id="414" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="CD8" id="415" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="pd-1" id="416" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="regulatory T cells" id="417" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="regulatory t cells" id="418" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="T cells" id="419" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="TGF-β" id="420" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="il-10" id="421" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="p62" target="IL-10" id="422" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="Beclin" id="423" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="beclin" id="424" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="regulatory T cell" id="425" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="Treg" id="426" weight="6">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="regulatory t cell" id="427" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="treg" id="428" weight="6">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="T cell" id="429" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="ULK1" id="430" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="atg16l1" id="431" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="ampk" id="432" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="rapamycin" id="433" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="mtor" id="434" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="ATG" id="435" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="AMPK" id="436" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="mTOR" id="437" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="atg" id="438" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="ulk1" id="439" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="dendritic cells" id="440" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="B cell" id="441" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="DCs" id="442" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="MAP1LC3" id="443" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="self-tolerance" id="444" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="T cells" id="445" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="atg5" id="446" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="atg7" id="447" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="immunosuppression" id="448" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="tumor" target="IFN-γ" id="449" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory T cell" target="Beclin" id="450" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory T cell" target="beclin" id="451" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory T cell" target="MAP1LC3" id="452" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory T cell" target="graft-versus-host" id="453" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory T cell" target="transplantation" id="454" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory T cell" target="gvhd" id="455" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory T cell" target="cancer" id="456" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="Beclin" id="457" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="beclin" id="458" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="IBD" id="459" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="ibd" id="460" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="ULK1" id="461" weight="10">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="atg16l1" id="462" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="ampk" id="463" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="rapamycin" id="464" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="mtor" id="465" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="ATG" id="466" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="AMPK" id="467" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="mTOR" id="468" weight="8">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="atg" id="469" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="ulk1" id="470" weight="5">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="inflammatory bowel disease" id="471" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="colitis" id="472" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="inflammation" id="473" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="MAP1LC3" id="474" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="atg5" id="475" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="CTLA-4" id="476" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="IFN-γ" id="477" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="IL-10" id="478" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="cytokine" id="479" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="cancer" id="480" weight="8">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="autoimmune" id="481" weight="7">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="CD8" id="482" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="CD4" id="483" weight="5">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="mitophagy" id="484" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="transplantation" id="485" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="gvhd" id="486" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="infection" id="487" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="atg7" id="488" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="JAK3" id="489" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="autophagic" id="490" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="autoimmunity" id="491" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="rejection" id="492" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="CD25" id="493" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="Treg" target="arthritis" id="494" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory t cell" target="Beclin" id="495" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory t cell" target="beclin" id="496" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory t cell" target="MAP1LC3" id="497" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory t cell" target="graft-versus-host" id="498" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory t cell" target="transplantation" id="499" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory t cell" target="gvhd" id="500" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory t cell" target="cancer" id="501" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="Beclin" id="502" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="beclin" id="503" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="IBD" id="504" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="ibd" id="505" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="ULK1" id="506" weight="10">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="atg16l1" id="507" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="ampk" id="508" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="rapamycin" id="509" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="mtor" id="510" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="ATG" id="511" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="AMPK" id="512" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="mTOR" id="513" weight="8">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="atg" id="514" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="ulk1" id="515" weight="5">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="inflammatory bowel disease" id="516" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="colitis" id="517" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="inflammation" id="518" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="MAP1LC3" id="519" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="atg5" id="520" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="CTLA-4" id="521" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="IFN-γ" id="522" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="IL-10" id="523" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="cytokine" id="524" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="cancer" id="525" weight="8">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="autoimmune" id="526" weight="7">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="CD8" id="527" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="CD4" id="528" weight="5">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="mitophagy" id="529" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="transplantation" id="530" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="gvhd" id="531" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="infection" id="532" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="atg7" id="533" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="JAK3" id="534" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="autophagic" id="535" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="autoimmunity" id="536" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="rejection" id="537" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="CD25" id="538" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="treg" target="arthritis" id="539" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="Beclin" id="540" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="beclin" id="541" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="MAP1LC3" id="542" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="mitophagy" id="543" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="CD4" id="544" weight="13">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="cytokine" id="545" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="CD8" id="546" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="mtor" id="547" weight="5">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="mTOR" id="548" weight="10">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="ampk" id="549" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="rapamycin" id="550" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="AMPK" id="551" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="graft-versus-host" id="552" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="transplantation" id="553" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="gvhd" id="554" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="diabetes" id="555" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="inflammation" id="556" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="IL-6" id="557" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="IL-10" id="558" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="IFN-γ" id="559" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cell" target="cancer" id="560" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Beclin" target="AMPK" id="561" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Beclin" target="ULK1" id="562" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Beclin" target="mTOR" id="563" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Beclin" target="ATG" id="564" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Beclin" target="inflammatory bowel disease" id="565" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Beclin" target="IBD" id="566" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Beclin" target="colitis" id="567" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Beclin" target="ibd" id="568" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Beclin" target="dendritic cells" id="569" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Beclin" target="B cell" id="570" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Beclin" target="DCs" id="571" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Beclin" target="CD4+" id="572" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="Beclin" target="lymphocytes" id="573" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Beclin" target="T cells" id="574" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="Beclin" target="autoimmune" id="575" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="beclin" target="AMPK" id="576" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="beclin" target="ULK1" id="577" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="beclin" target="mTOR" id="578" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="beclin" target="ATG" id="579" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="beclin" target="inflammatory bowel disease" id="580" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="beclin" target="IBD" id="581" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="beclin" target="colitis" id="582" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="beclin" target="ibd" id="583" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="beclin" target="dendritic cells" id="584" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="beclin" target="B cell" id="585" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="beclin" target="DCs" id="586" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="beclin" target="CD4+" id="587" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="beclin" target="lymphocytes" id="588" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="beclin" target="T cells" id="589" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="beclin" target="autoimmune" id="590" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="peptide" target="inflammation" id="591" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="inflammation" target="eosinophils" id="592" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="inflammation" target="macroautophagy" id="593" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="inflammation" target="cytokine" id="594" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="inflammation" target="regulatory T cells" id="595" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="inflammation" target="regulatory t cells" id="596" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="inflammation" target="T cells" id="597" weight="5">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="inflammation" target="atg7" id="598" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="inflammation" target="IL-10" id="599" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="inflammation" target="il-10" id="600" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="inflammation" target="t-regulatory" id="601" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="inflammation" target="PD-1" id="602" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="inflammation" target="IL-6" id="603" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="inflammation" target="CD8" id="604" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="inflammation" target="TGF-β" id="605" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="inflammation" target="CD4" id="606" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="inflammation" target="pd-1" id="607" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="inflammation" target="atg16l1" id="608" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="inflammation" target="neutrophils" id="609" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="IBD" target="T cells" id="610" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="IBD" target="ULK1" id="611" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="IBD" target="atg16l1" id="612" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="IBD" target="ampk" id="613" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="IBD" target="rapamycin" id="614" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="IBD" target="mtor" id="615" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="IBD" target="ATG" id="616" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="IBD" target="AMPK" id="617" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="IBD" target="mTOR" id="618" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="IBD" target="atg" id="619" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="IBD" target="ulk1" id="620" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="IBD" target="dendritic cells" id="621" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="IBD" target="B cell" id="622" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="IBD" target="DCs" id="623" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="ibd" id="624" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="CD8" id="625" weight="16">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="mitophagy" id="626" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="cancer" id="627" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="PD-1" id="628" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="CD4" id="629" weight="24">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="IL-10" id="630" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="cytokine" id="631" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="antibody" id="632" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="autoimmune" id="633" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="transplantation" id="634" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="gvhd" id="635" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="autoimmunity" id="636" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="autophagic" id="637" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="infection" id="638" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="CD25" id="639" weight="6">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="IL-6" id="640" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="TGF-β" id="641" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="arthritis" id="642" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="mtor" id="643" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="mTOR" id="644" weight="6">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="IFN-γ" id="645" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="atg16l1" id="646" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="chemokine" id="647" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="T cells" target="rejection" id="648" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ibd" target="ULK1" id="649" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ibd" target="atg16l1" id="650" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ibd" target="ampk" id="651" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ibd" target="rapamycin" id="652" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ibd" target="mtor" id="653" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ibd" target="ATG" id="654" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ibd" target="AMPK" id="655" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ibd" target="mTOR" id="656" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ibd" target="atg" id="657" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ibd" target="ulk1" id="658" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ibd" target="dendritic cells" id="659" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ibd" target="B cell" id="660" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ibd" target="DCs" id="661" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ULK1" target="AMPK" id="662" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ULK1" target="ULK1" id="663" weight="8">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="ULK1" target="mTOR" id="664" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ULK1" target="ATG" id="665" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ULK1" target="inflammatory bowel disease" id="666" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ULK1" target="colitis" id="667" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ULK1" target="dendritic cells" id="668" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ULK1" target="B cell" id="669" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ULK1" target="DCs" id="670" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ULK1" target="atg16l1" id="671" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ULK1" target="ampk" id="672" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ULK1" target="rapamycin" id="673" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ULK1" target="mtor" id="674" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ULK1" target="atg" id="675" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ULK1" target="ulk1" id="676" weight="8">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="ULK1" target="autoimmunity" id="677" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ULK1" target="cancer" id="678" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="AMPK" target="atg16l1" id="679" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="AMPK" target="ampk" id="680" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="AMPK" target="rapamycin" id="681" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="AMPK" target="mtor" id="682" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="AMPK" target="ATG" id="683" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="AMPK" target="AMPK" id="684" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="AMPK" target="mTOR" id="685" weight="6">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="AMPK" target="inflammatory bowel disease" id="686" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="AMPK" target="colitis" id="687" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="AMPK" target="dendritic cells" id="688" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="AMPK" target="B cell" id="689" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="AMPK" target="DCs" id="690" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="AMPK" target="atg" id="691" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="AMPK" target="ulk1" id="692" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="AMPK" target="IL-6" id="693" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="AMPK" target="TNF-α" id="694" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="AMPK" target="autophagosome" id="695" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="atg16l1" id="696" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="ampk" id="697" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="rapamycin" id="698" weight="7">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="mtor" id="699" weight="20">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="ATG" id="700" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="mTOR" id="701" weight="20">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="inflammatory bowel disease" id="702" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="colitis" id="703" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="dendritic cells" id="704" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="B cell" id="705" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="DCs" id="706" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="atg" id="707" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="ulk1" id="708" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="lysosome" id="709" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="IL-6" id="710" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="TNF-α" id="711" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="autophagosome" id="712" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="autophagic" id="713" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="helios" id="714" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="bafilomycin" id="715" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="lupus" id="716" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="mTOR" target="STAT3" id="717" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ATG" target="atg16l1" id="718" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ATG" target="ampk" id="719" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ATG" target="rapamycin" id="720" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ATG" target="mtor" id="721" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ATG" target="ATG" id="722" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="ATG" target="inflammatory bowel disease" id="723" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ATG" target="colitis" id="724" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ATG" target="dendritic cells" id="725" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ATG" target="B cell" id="726" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ATG" target="DCs" id="727" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="ATG" target="atg" id="728" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="ATG" target="ulk1" id="729" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="inflammatory bowel disease" target="atg16l1" id="730" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="inflammatory bowel disease" target="ampk" id="731" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="inflammatory bowel disease" target="rapamycin" id="732" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="inflammatory bowel disease" target="mtor" id="733" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="inflammatory bowel disease" target="atg" id="734" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="inflammatory bowel disease" target="ulk1" id="735" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="inflammatory bowel disease" target="dendritic cells" id="736" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="inflammatory bowel disease" target="B cell" id="737" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="inflammatory bowel disease" target="DCs" id="738" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="colitis" target="atg16l1" id="739" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="colitis" target="ampk" id="740" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="colitis" target="rapamycin" id="741" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="colitis" target="mtor" id="742" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="colitis" target="atg" id="743" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="colitis" target="ulk1" id="744" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="colitis" target="dendritic cells" id="745" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="colitis" target="B cell" id="746" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="colitis" target="DCs" id="747" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="dendritic cells" target="atg16l1" id="748" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="dendritic cells" target="ampk" id="749" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="dendritic cells" target="rapamycin" id="750" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="dendritic cells" target="mtor" id="751" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="dendritic cells" target="atg" id="752" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="dendritic cells" target="ulk1" id="753" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="dendritic cells" target="IFN-γ" id="754" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="dendritic cells" target="CD4" id="755" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="B cell" target="atg16l1" id="756" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="B cell" target="ampk" id="757" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="B cell" target="rapamycin" id="758" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="B cell" target="mtor" id="759" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="B cell" target="atg" id="760" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="B cell" target="ulk1" id="761" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="DCs" target="atg16l1" id="762" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="DCs" target="ampk" id="763" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="DCs" target="rapamycin" id="764" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="DCs" target="mtor" id="765" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="DCs" target="atg" id="766" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="DCs" target="ulk1" id="767" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="atg16l1" target="autoimmune" id="768" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="rapamycin" target="lupus" id="769" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="mtor" target="helios" id="770" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="mtor" target="lupus" id="771" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="mtor" target="STAT3" id="772" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ulk1" target="autoimmunity" id="773" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="ulk1" target="cancer" id="774" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="infectious" target="neutrophil" id="775" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="neutrophil" target="antibody" id="776" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="neutrophil" target="infection" id="777" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="cancer" target="neutrophils" id="778" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="cancer" target="regulatory T cells" id="779" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="cancer" target="regulatory t cells" id="780" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="cancer" target="PD-1" id="781" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="cancer" target="pd-1" id="782" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="cancer" target="immunosuppression" id="783" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="cancer" target="immune tolerance" id="784" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="neutrophils" target="autoimmune" id="785" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="neutrophils" target="TNF-α" id="786" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="neutrophils" target="antibody" id="787" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="neutrophils" target="infection" id="788" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="neutrophils" target="lupus" id="789" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autoimmune" target="CD4" id="790" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autoimmune" target="regulatory T cells" id="791" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="autoimmune" target="regulatory t cells" id="792" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="autoimmune" target="macroautophagy" id="793" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autoimmune" target="cytokine" id="794" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autoimmune" target="autophagic" id="795" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autoimmune" target="immunosuppression" id="796" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autoimmune" target="PD-1" id="797" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="autoimmune" target="pd-1" id="798" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="autoimmune" target="IFN-γ" id="799" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="infection" target="antibody" id="800" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="infection" target="mitophagy" id="801" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="infection" target="CD4" id="802" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="infection" target="CD4+" id="803" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="infection" target="lymphocytes" id="804" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="infection" target="CD8" id="805" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="infection" target="IFN-γ" id="806" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="infection" target="IL-1β" id="807" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="infection" target="autophagic" id="808" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="infection" target="lymphocyte" id="809" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="infection" target="immunosuppression" id="810" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="infection" target="dendritic cell" id="811" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="lymphocytes" target="CD4" id="812" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="lymphocytes" target="arthritis" id="813" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="CD8" target="pd-1" id="814" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="CD8" target="regulatory T cells" id="815" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="CD8" target="regulatory t cells" id="816" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="CD8" target="il-10" id="817" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="CD8" target="CD8+" id="818" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="mitophagy" target="CD25" id="819" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="mitophagy" target="regulatory T cells" id="820" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="mitophagy" target="regulatory t cells" id="821" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory T cells" target="IL-10" id="822" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory T cells" target="cytokine" id="823" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory T cells" target="antibody" id="824" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory T cells" target="transplantation" id="825" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory T cells" target="gvhd" id="826" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory T cells" target="autoimmunity" id="827" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory T cells" target="CD25" id="828" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory T cells" target="CD4" id="829" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory T cells" target="PD-1" id="830" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory T cells" target="IL-6" id="831" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory T cells" target="TGF-β" id="832" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory T cells" target="arthritis" id="833" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory t cells" target="IL-10" id="834" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory t cells" target="cytokine" id="835" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory t cells" target="antibody" id="836" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory t cells" target="transplantation" id="837" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory t cells" target="gvhd" id="838" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory t cells" target="autoimmunity" id="839" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory t cells" target="CD25" id="840" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory t cells" target="CD4" id="841" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory t cells" target="PD-1" id="842" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory t cells" target="IL-6" id="843" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory t cells" target="TGF-β" id="844" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory t cells" target="arthritis" id="845" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="atg5" target="asthma" id="846" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="atg5" target="lymphocyte" id="847" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="PD-1" target="pd-1" id="848" weight="9">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="PD-1" target="il-10" id="849" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="pd-1" target="IL-6" id="850" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="pd-1" target="TGF-β" id="851" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="pd-1" target="CD4" id="852" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="pd-1" target="IL-10" id="853" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="CTLA-4" target="ctla-4" id="854" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autoimmunity" target="IL-6" id="855" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autoimmunity" target="atg7" id="856" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autoimmunity" target="IL-10" id="857" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autoimmunity" target="il-10" id="858" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autoimmunity" target="immune tolerance" id="859" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autoimmunity" target="self-tolerance" id="860" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="CD4" target="CD4+" id="861" weight="11">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="CD4" target="asthma" id="862" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="CD4" target="lymphocyte" id="863" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="CD4" target="CD25" id="864" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="CD4" target="B cells" id="865" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="CD4" target="monocytes" id="866" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="CD4" target="cd4+cd25+" id="867" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="CD4" target="immunosuppression" id="868" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="CD4" target="CD4+CD25+" id="869" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="CD4" target="rejection" id="870" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="cytokine" target="eosinophils" id="871" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="cytokine" target="eosinophil" id="872" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="cytokine" target="il-10" id="873" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="cytokine" target="CD4+" id="874" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="cytokine" target="lymphocyte" id="875" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="IFN-γ" target="CD4+" id="876" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="IFN-γ" target="B cells" id="877" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="IFN-γ" target="monocytes" id="878" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="antibody" target="B cells" id="879" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="eosinophils" target="allergic" id="880" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="IL-6" target="lupus" id="881" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="IL-6" target="il-10" id="882" weight="3">
+        <attvalues>
+          <attvalue for="2" value="3" />
+        </attvalues>
+      </edge>
+      <edge source="IL-10" target="eosinophil" id="883" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="IL-10" target="il-10" id="884" weight="9">
+        <attvalues>
+          <attvalue for="2" value="5" />
+        </attvalues>
+      </edge>
+      <edge source="IL-10" target="lupus" id="885" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="il-10" target="atg7" id="886" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="il-10" target="lupus" id="887" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="il-10" target="TGF-β" id="888" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="suppressive" target="transplantation" id="889" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="suppressive" target="gvhd" id="890" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="lymphocyte" target="asthma" id="891" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autophagic" target="CD4+" id="892" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="autophagic" target="rejection" id="893" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="gvhd" target="atg7" id="894" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="atg7" target="lupus" id="895" weight="1">
+        <attvalues>
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="immunosuppression" target="CD25" id="896" weight="2">
+        <attvalues>
+          <attvalue for="2" value="2" />
+        </attvalues>
+      </edge>
+      <edge source="CD25" target="CD25" id="897" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="CD25" target="cd4+cd25+" id="898" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+      <edge source="CD25" target="CD4+CD25+" id="899" weight="4">
+        <attvalues>
+          <attvalue for="2" value="4" />
+        </attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>

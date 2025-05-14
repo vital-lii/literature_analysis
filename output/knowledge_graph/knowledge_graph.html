@@ -1,0 +1,657 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+                <link href="lib/tom-select/tom-select.css" rel="stylesheet">
+                <script src="lib/tom-select/tom-select.complete.min.js"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 800px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 800px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+
+            <div id="loading" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                 background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+                <h3>Loading Knowledge Graph...</h3>
+                <p>Number of nodes: 110</p>
+                <p>Number of edges: 900</p>
+                <p>Please wait...</p>
+            </div>
+            <script>
+                window.addEventListener('load', function() {
+                    document.getElementById('loading').style.display = 'none';
+                });
+            </script>
+            
+        <div class="card" style="width: 100%">
+            
+                <div id="select-menu" class="card-header">
+                    <div class="row no-gutters">
+                        <div class="col-10 pb-2">
+                            <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="selectNode([value]);"
+                            id="select-node"
+                            placeholder="Select node..."
+                            >
+                                <option selected>Select a Node by ID</option>
+                                
+                                    <option value="FOXP3">FOXP3</option>
+                                
+                                    <option value="macrophages">macrophages</option>
+                                
+                                    <option value="foxp3">foxp3</option>
+                                
+                                    <option value="tregs">tregs</option>
+                                
+                                    <option value="macrophage">macrophage</option>
+                                
+                                    <option value="LC3">LC3</option>
+                                
+                                    <option value="lc3">lc3</option>
+                                
+                                    <option value="protein">protein</option>
+                                
+                                    <option value="BECN1">BECN1</option>
+                                
+                                    <option value="autophagy">autophagy</option>
+                                
+                                    <option value="LPS">LPS</option>
+                                
+                                    <option value="sqstm1/p62">sqstm1/p62</option>
+                                
+                                    <option value="SQSTM1">SQSTM1</option>
+                                
+                                    <option value="p62">p62</option>
+                                
+                                    <option value="tumor">tumor</option>
+                                
+                                    <option value="regulatory T cell">regulatory T cell</option>
+                                
+                                    <option value="Treg">Treg</option>
+                                
+                                    <option value="regulatory t cell">regulatory t cell</option>
+                                
+                                    <option value="treg">treg</option>
+                                
+                                    <option value="T cell">T cell</option>
+                                
+                                    <option value="Beclin">Beclin</option>
+                                
+                                    <option value="beclin">beclin</option>
+                                
+                                    <option value="peptide">peptide</option>
+                                
+                                    <option value="inflammation">inflammation</option>
+                                
+                                    <option value="IBD">IBD</option>
+                                
+                                    <option value="T cells">T cells</option>
+                                
+                                    <option value="ibd">ibd</option>
+                                
+                                    <option value="ULK1">ULK1</option>
+                                
+                                    <option value="AMPK">AMPK</option>
+                                
+                                    <option value="mTOR">mTOR</option>
+                                
+                                    <option value="ATG">ATG</option>
+                                
+                                    <option value="inflammatory bowel disease">inflammatory bowel disease</option>
+                                
+                                    <option value="colitis">colitis</option>
+                                
+                                    <option value="dendritic cells">dendritic cells</option>
+                                
+                                    <option value="B cell">B cell</option>
+                                
+                                    <option value="DCs">DCs</option>
+                                
+                                    <option value="atg16l1">atg16l1</option>
+                                
+                                    <option value="ampk">ampk</option>
+                                
+                                    <option value="rapamycin">rapamycin</option>
+                                
+                                    <option value="mtor">mtor</option>
+                                
+                                    <option value="atg">atg</option>
+                                
+                                    <option value="ulk1">ulk1</option>
+                                
+                                    <option value="infectious">infectious</option>
+                                
+                                    <option value="neutrophil">neutrophil</option>
+                                
+                                    <option value="cancer">cancer</option>
+                                
+                                    <option value="neutrophils">neutrophils</option>
+                                
+                                    <option value="autoimmune">autoimmune</option>
+                                
+                                    <option value="infection">infection</option>
+                                
+                                    <option value="lymphocytes">lymphocytes</option>
+                                
+                                    <option value="macroautophagy">macroautophagy</option>
+                                
+                                    <option value="lysosome">lysosome</option>
+                                
+                                    <option value="autophagosome">autophagosome</option>
+                                
+                                    <option value="MAP1LC3">MAP1LC3</option>
+                                
+                                    <option value="CD8">CD8</option>
+                                
+                                    <option value="mitophagy">mitophagy</option>
+                                
+                                    <option value="regulatory T cells">regulatory T cells</option>
+                                
+                                    <option value="regulatory t cells">regulatory t cells</option>
+                                
+                                    <option value="atg5">atg5</option>
+                                
+                                    <option value="natural killer">natural killer</option>
+                                
+                                    <option value="PD-1">PD-1</option>
+                                
+                                    <option value="pd-1">pd-1</option>
+                                
+                                    <option value="CTLA-4">CTLA-4</option>
+                                
+                                    <option value="ctla-4">ctla-4</option>
+                                
+                                    <option value="autoimmunity">autoimmunity</option>
+                                
+                                    <option value="CD4">CD4</option>
+                                
+                                    <option value="cytokine">cytokine</option>
+                                
+                                    <option value="IFN-γ">IFN-γ</option>
+                                
+                                    <option value="TNF-α">TNF-α</option>
+                                
+                                    <option value="antibody">antibody</option>
+                                
+                                    <option value="eosinophils">eosinophils</option>
+                                
+                                    <option value="allergic">allergic</option>
+                                
+                                    <option value="IL-6">IL-6</option>
+                                
+                                    <option value="IL-10">IL-10</option>
+                                
+                                    <option value="eosinophil">eosinophil</option>
+                                
+                                    <option value="il-10">il-10</option>
+                                
+                                    <option value="suppressive">suppressive</option>
+                                
+                                    <option value="self-tolerance">self-tolerance</option>
+                                
+                                    <option value="lymphocyte">lymphocyte</option>
+                                
+                                    <option value="chloroquine">chloroquine</option>
+                                
+                                    <option value="autophagic">autophagic</option>
+                                
+                                    <option value="CD4+">CD4+</option>
+                                
+                                    <option value="immune tolerance">immune tolerance</option>
+                                
+                                    <option value="asthma">asthma</option>
+                                
+                                    <option value="transplantation">transplantation</option>
+                                
+                                    <option value="gvhd">gvhd</option>
+                                
+                                    <option value="atg7">atg7</option>
+                                
+                                    <option value="JAK3">JAK3</option>
+                                
+                                    <option value="malignancy">malignancy</option>
+                                
+                                    <option value="allergy">allergy</option>
+                                
+                                    <option value="graft-versus-host">graft-versus-host</option>
+                                
+                                    <option value="lupus">lupus</option>
+                                
+                                    <option value="immunosuppression">immunosuppression</option>
+                                
+                                    <option value="helios">helios</option>
+                                
+                                    <option value="rejection">rejection</option>
+                                
+                                    <option value="t-regulatory">t-regulatory</option>
+                                
+                                    <option value="CD25">CD25</option>
+                                
+                                    <option value="3-methyladenine">3-methyladenine</option>
+                                
+                                    <option value="TGF-β">TGF-β</option>
+                                
+                                    <option value="diabetes">diabetes</option>
+                                
+                                    <option value="arthritis">arthritis</option>
+                                
+                                    <option value="bafilomycin">bafilomycin</option>
+                                
+                                    <option value="B cells">B cells</option>
+                                
+                                    <option value="monocytes">monocytes</option>
+                                
+                                    <option value="IL-1β">IL-1β</option>
+                                
+                                    <option value="chemokine">chemokine</option>
+                                
+                                    <option value="STAT3">STAT3</option>
+                                
+                                    <option value="cd4+cd25+">cd4+cd25+</option>
+                                
+                                    <option value="CD4+CD25+">CD4+CD25+</option>
+                                
+                                    <option value="dendritic cell">dendritic cell</option>
+                                
+                                    <option value="CD8+">CD8+</option>
+                                
+                            </select>
+                        </div>
+                        <div class="col-2 pb-2">
+                            <button type="button" class="btn btn-primary btn-block" onclick="neighbourhoodHighlight({nodes: []});">Reset Selection</button>
+                        </div>
+                    </div>
+                </div>
+            
+            
+              <div id="filter-menu" class="card-header">
+                <div class="row no-gutters">
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="updateFilter(value, 'item')"
+                            id="select-item"
+                        >
+                        <option value="">Select a network item</option>
+                        <option value="edge">edge</option>
+                        <option value="node">node</option>
+                    </select>
+                  </div>
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="updateFilter(value, 'property')"
+                            id="select-property"
+                        >
+                        <option value="">Select a property...</option>
+                    </select>
+                  </div>
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            id="select-value"
+                        >
+                        <option value="">Select value(s)...</option>
+                    </select>
+                  </div>
+                  <div class="col-1 pb-2">
+                    <button type="button" class="btn btn-primary btn-block" onclick="highlightFilter(filter);">Filter</button>
+                  </div>
+                  <div class="col-2 pb-2">
+                    <button type="button" class="btn btn-primary btn-block" onclick="clearFilter(true)">Reset Selection</button>
+                  </div>
+                </div>
+              </div>
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+                  new TomSelect("#select-node",{
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      }
+                  });
+              
+
+              
+                  // explicitly using onItemAdd and this function as we need to save multiple values
+                  let updateValueFilter = function() {
+                      return function () {
+                      filter['value'].push(arguments[0])
+                      }
+                  }
+
+                  let valueControl = new TomSelect("#select-value",{
+                      maxItems: null,
+                      valueField: 'id',
+                      labelField: 'title',
+                      searchField: 'title',
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: updateValueFilter()
+                  });
+
+                  let addValues = function() {
+                      return function () {
+                          // clear the current value options and add the selected attribute values
+                          // tom-select handles duplicates
+                          let selectedProperty = arguments[0];
+                          valueControl.clear();
+                          valueControl.clearOptions();
+                          filter['value'] = []
+                          if (filter['item'] === 'node') {
+                              for (let each in allNodes) {
+                                  valueControl.addOption({
+                                      id:allNodes[each][selectedProperty],
+                                      title:allNodes[each][selectedProperty]
+                                  })
+                              }
+                          }
+                          else if (filter['item'] === 'edge') {
+                              for (let each in allEdges) {
+                                  valueControl.addOption({
+                                      id:allEdges[each][selectedProperty],
+                                      title:allEdges[each][selectedProperty]
+                                  })
+                              }
+                          }
+                      }
+                  };
+
+                  let propControl = new TomSelect("#select-property",{
+                      valueField: 'id',
+                      labelField: 'title',
+                      searchField: 'title',
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: addValues()
+                  });
+
+                  let addProperties = function() {
+                      return function () {
+                          // loops through the selected network item and adds the attributes to dropdown
+                          // tom-select handles duplicates
+                          clearFilter(false)
+                          if (arguments[0] === 'edge') {
+                              for (let each in allEdges) {
+                                  if (allEdges.hasOwnProperty(each)) {
+                                      for (let eachProp in allEdges[each]) {
+                                          if (allEdges[each].hasOwnProperty(eachProp)) {
+                                              propControl.addOption({id: eachProp, title: eachProp})
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                          else if (arguments[0] === 'node') {
+                              for (let each in allNodes) {
+                                  if (allNodes.hasOwnProperty(each)) {
+                                      for (let eachProp in allNodes[each]) {
+                                          if (allNodes[each].hasOwnProperty(eachProp)
+                                              && (eachProp !== 'hidden' && eachProp !== 'savedLabel'
+                                                  && eachProp !== 'hiddenLabel')) {
+                                              propControl.addOption({id: eachProp, title: eachProp})
+
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  };
+
+                  let itemControl = new TomSelect("#select-item",{
+                      create: false,
+                      sortField:{
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: addProperties()
+                  });
+
+                  function clearFilter(reset) {
+                      // utility function to clear all the selected filter options
+                      // if reset is set to true, the existing filter will be removed
+                      // else, only the dropdown options are cleared
+                      propControl.clear();
+                      propControl.clearOptions();
+                      valueControl.clear();
+                      valueControl.clearOptions();
+                      filter = {
+                          item : '',
+                          property : '',
+                          value : []
+                      }
+                      if (reset) {
+                          itemControl.clear();
+                          filterHighlight({nodes: []})
+                      }
+                  }
+
+                  function updateFilter(value, key) {
+                      // key could be 'item' or 'property' and value is as selected in dropdown
+                      filter[key] = value
+                  }
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"borderWidth": 2, "borderWidthSelected": 3, "color": "#FF7F0E", "font": {"color": "black"}, "id": "FOXP3", "label": "FOXP3", "shape": "dot", "size": 104, "title": "Type: GENE\nDegree: 52"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "macrophages", "label": "macrophages", "shape": "dot", "size": 38, "title": "Type: CELL_TYPE\nDegree: 19"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "foxp3", "label": "foxp3", "shape": "dot", "size": 72, "title": "Type: CELL_TYPE\nDegree: 36"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "tregs", "label": "tregs", "shape": "dot", "size": 74, "title": "Type: CELL_TYPE\nDegree: 37"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "macrophage", "label": "macrophage", "shape": "dot", "size": 54, "title": "Type: CELL_TYPE\nDegree: 27"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#FF7F0E", "font": {"color": "black"}, "id": "LC3", "label": "LC3", "shape": "dot", "size": 100, "title": "Type: GENE\nDegree: 50"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "lc3", "label": "lc3", "shape": "dot", "size": 60, "title": "Type: CHEMICAL\nDegree: 30"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "protein", "label": "protein", "shape": "dot", "size": 66, "title": "Type: CHEMICAL\nDegree: 33"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#FF7F0E", "font": {"color": "black"}, "id": "BECN1", "label": "BECN1", "shape": "dot", "size": 66, "title": "Type: GENE\nDegree: 33"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "autophagy", "label": "autophagy", "shape": "dot", "size": 112, "title": "Type: CHEMICAL\nDegree: 56"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "LPS", "label": "LPS", "shape": "dot", "size": 46, "title": "Type: CHEMICAL\nDegree: 23"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "sqstm1/p62", "label": "sqstm1/p62", "shape": "dot", "size": 22, "title": "Type: CHEMICAL\nDegree: 11"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#FF7F0E", "font": {"color": "black"}, "id": "SQSTM1", "label": "SQSTM1", "shape": "dot", "size": 82, "title": "Type: GENE\nDegree: 41"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#FF7F0E", "font": {"color": "black"}, "id": "p62", "label": "p62", "shape": "dot", "size": 78, "title": "Type: GENE\nDegree: 39"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "tumor", "label": "tumor", "shape": "dot", "size": 82, "title": "Type: DISEASE\nDegree: 41"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "regulatory T cell", "label": "regulatory T cell", "shape": "dot", "size": 28, "title": "Type: CELL_TYPE\nDegree: 14"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "Treg", "label": "Treg", "shape": "dot", "size": 98, "title": "Type: CELL_TYPE\nDegree: 49"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "regulatory t cell", "label": "regulatory t cell", "shape": "dot", "size": 28, "title": "Type: CELL_TYPE\nDegree: 14"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "treg", "label": "treg", "shape": "dot", "size": 98, "title": "Type: CELL_TYPE\nDegree: 49"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "T cell", "label": "T cell", "shape": "dot", "size": 56, "title": "Type: CELL_TYPE\nDegree: 28"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "Beclin", "label": "Beclin", "shape": "dot", "size": 56, "title": "Type: CHEMICAL\nDegree: 28"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "beclin", "label": "beclin", "shape": "dot", "size": 56, "title": "Type: CHEMICAL\nDegree: 28"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "peptide", "label": "peptide", "shape": "dot", "size": 2, "title": "Type: CHEMICAL\nDegree: 1"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "inflammation", "label": "inflammation", "shape": "dot", "size": 68, "title": "Type: DISEASE\nDegree: 34"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "IBD", "label": "IBD", "shape": "dot", "size": 56, "title": "Type: DISEASE\nDegree: 28"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "T cells", "label": "T cells", "shape": "dot", "size": 72, "title": "Type: CELL_TYPE\nDegree: 36"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "ibd", "label": "ibd", "shape": "dot", "size": 56, "title": "Type: DISEASE\nDegree: 28"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#FF7F0E", "font": {"color": "black"}, "id": "ULK1", "label": "ULK1", "shape": "dot", "size": 70, "title": "Type: GENE\nDegree: 35"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#FF7F0E", "font": {"color": "black"}, "id": "AMPK", "label": "AMPK", "shape": "dot", "size": 76, "title": "Type: GENE\nDegree: 38"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#FF7F0E", "font": {"color": "black"}, "id": "mTOR", "label": "mTOR", "shape": "dot", "size": 90, "title": "Type: GENE\nDegree: 45"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#FF7F0E", "font": {"color": "black"}, "id": "ATG", "label": "ATG", "shape": "dot", "size": 68, "title": "Type: GENE\nDegree: 34"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "inflammatory bowel disease", "label": "inflammatory bowel disease", "shape": "dot", "size": 54, "title": "Type: DISEASE\nDegree: 27"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "colitis", "label": "colitis", "shape": "dot", "size": 54, "title": "Type: DISEASE\nDegree: 27"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "dendritic cells", "label": "dendritic cells", "shape": "dot", "size": 54, "title": "Type: CELL_TYPE\nDegree: 27"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "B cell", "label": "B cell", "shape": "dot", "size": 50, "title": "Type: CELL_TYPE\nDegree: 25"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "DCs", "label": "DCs", "shape": "dot", "size": 50, "title": "Type: CELL_TYPE\nDegree: 25"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "atg16l1", "label": "atg16l1", "shape": "dot", "size": 46, "title": "Type: CHEMICAL\nDegree: 23"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "ampk", "label": "ampk", "shape": "dot", "size": 44, "title": "Type: CHEMICAL\nDegree: 22"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "rapamycin", "label": "rapamycin", "shape": "dot", "size": 48, "title": "Type: CHEMICAL\nDegree: 24"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "mtor", "label": "mtor", "shape": "dot", "size": 52, "title": "Type: CHEMICAL\nDegree: 26"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "atg", "label": "atg", "shape": "dot", "size": 42, "title": "Type: CHEMICAL\nDegree: 21"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "ulk1", "label": "ulk1", "shape": "dot", "size": 44, "title": "Type: CHEMICAL\nDegree: 22"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "infectious", "label": "infectious", "shape": "dot", "size": 6, "title": "Type: DISEASE\nDegree: 3"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "neutrophil", "label": "neutrophil", "shape": "dot", "size": 8, "title": "Type: CELL_TYPE\nDegree: 4"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "cancer", "label": "cancer", "shape": "dot", "size": 40, "title": "Type: DISEASE\nDegree: 20"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "neutrophils", "label": "neutrophils", "shape": "dot", "size": 16, "title": "Type: CELL_TYPE\nDegree: 8"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "autoimmune", "label": "autoimmune", "shape": "dot", "size": 42, "title": "Type: DISEASE\nDegree: 21"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "infection", "label": "infection", "shape": "dot", "size": 44, "title": "Type: DISEASE\nDegree: 22"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "lymphocytes", "label": "lymphocytes", "shape": "dot", "size": 12, "title": "Type: CELL_TYPE\nDegree: 6"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "macroautophagy", "label": "macroautophagy", "shape": "dot", "size": 6, "title": "Type: CHEMICAL\nDegree: 3"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "lysosome", "label": "lysosome", "shape": "dot", "size": 4, "title": "Type: CHEMICAL\nDegree: 2"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "autophagosome", "label": "autophagosome", "shape": "dot", "size": 8, "title": "Type: CHEMICAL\nDegree: 4"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#FF7F0E", "font": {"color": "black"}, "id": "MAP1LC3", "label": "MAP1LC3", "shape": "dot", "size": 20, "title": "Type: GENE\nDegree: 10"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "CD8", "label": "CD8", "shape": "dot", "size": 32, "title": "Type: CHEMICAL\nDegree: 16"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "mitophagy", "label": "mitophagy", "shape": "dot", "size": 18, "title": "Type: CHEMICAL\nDegree: 9"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "regulatory T cells", "label": "regulatory T cells", "shape": "dot", "size": 44, "title": "Type: CELL_TYPE\nDegree: 22"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "regulatory t cells", "label": "regulatory t cells", "shape": "dot", "size": 44, "title": "Type: CELL_TYPE\nDegree: 22"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "atg5", "label": "atg5", "shape": "dot", "size": 10, "title": "Type: CHEMICAL\nDegree: 5"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "natural killer", "label": "natural killer", "shape": "dot", "size": 2, "title": "Type: CELL_TYPE\nDegree: 1"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "PD-1", "label": "PD-1", "shape": "dot", "size": 22, "title": "Type: CHEMICAL\nDegree: 11"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "pd-1", "label": "pd-1", "shape": "dot", "size": 28, "title": "Type: CELL_TYPE\nDegree: 14"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "CTLA-4", "label": "CTLA-4", "shape": "dot", "size": 6, "title": "Type: CHEMICAL\nDegree: 3"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "ctla-4", "label": "ctla-4", "shape": "dot", "size": 2, "title": "Type: CELL_TYPE\nDegree: 1"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "autoimmunity", "label": "autoimmunity", "shape": "dot", "size": 32, "title": "Type: DISEASE\nDegree: 16"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "CD4", "label": "CD4", "shape": "dot", "size": 56, "title": "Type: CHEMICAL\nDegree: 28"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "cytokine", "label": "cytokine", "shape": "dot", "size": 30, "title": "Type: CHEMICAL\nDegree: 15"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "IFN-\u03b3", "label": "IFN-\u03b3", "shape": "dot", "size": 22, "title": "Type: CHEMICAL\nDegree: 11"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "TNF-\u03b1", "label": "TNF-\u03b1", "shape": "dot", "size": 8, "title": "Type: CHEMICAL\nDegree: 4"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "antibody", "label": "antibody", "shape": "dot", "size": 16, "title": "Type: CHEMICAL\nDegree: 8"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "eosinophils", "label": "eosinophils", "shape": "dot", "size": 8, "title": "Type: CELL_TYPE\nDegree: 4"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "allergic", "label": "allergic", "shape": "dot", "size": 4, "title": "Type: DISEASE\nDegree: 2"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "IL-6", "label": "IL-6", "shape": "dot", "size": 28, "title": "Type: CHEMICAL\nDegree: 14"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "IL-10", "label": "IL-10", "shape": "dot", "size": 38, "title": "Type: CHEMICAL\nDegree: 19"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "eosinophil", "label": "eosinophil", "shape": "dot", "size": 6, "title": "Type: CELL_TYPE\nDegree: 3"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "il-10", "label": "il-10", "shape": "dot", "size": 32, "title": "Type: CELL_TYPE\nDegree: 16"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "suppressive", "label": "suppressive", "shape": "dot", "size": 10, "title": "Type: CELL_TYPE\nDegree: 5"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "self-tolerance", "label": "self-tolerance", "shape": "dot", "size": 4, "title": "Type: CELL_TYPE\nDegree: 2"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "lymphocyte", "label": "lymphocyte", "shape": "dot", "size": 14, "title": "Type: CELL_TYPE\nDegree: 7"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "chloroquine", "label": "chloroquine", "shape": "dot", "size": 2, "title": "Type: CHEMICAL\nDegree: 1"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "autophagic", "label": "autophagic", "shape": "dot", "size": 26, "title": "Type: CHEMICAL\nDegree: 13"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "CD4+", "label": "CD4+", "shape": "dot", "size": 16, "title": "Type: CELL_TYPE\nDegree: 8"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "immune tolerance", "label": "immune tolerance", "shape": "dot", "size": 6, "title": "Type: CELL_TYPE\nDegree: 3"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "asthma", "label": "asthma", "shape": "dot", "size": 8, "title": "Type: DISEASE\nDegree: 4"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "transplantation", "label": "transplantation", "shape": "dot", "size": 22, "title": "Type: DISEASE\nDegree: 11"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "gvhd", "label": "gvhd", "shape": "dot", "size": 24, "title": "Type: DISEASE\nDegree: 12"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "atg7", "label": "atg7", "shape": "dot", "size": 22, "title": "Type: CHEMICAL\nDegree: 11"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#FF7F0E", "font": {"color": "black"}, "id": "JAK3", "label": "JAK3", "shape": "dot", "size": 12, "title": "Type: GENE\nDegree: 6"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "malignancy", "label": "malignancy", "shape": "dot", "size": 2, "title": "Type: DISEASE\nDegree: 1"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "allergy", "label": "allergy", "shape": "dot", "size": 2, "title": "Type: DISEASE\nDegree: 1"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "graft-versus-host", "label": "graft-versus-host", "shape": "dot", "size": 8, "title": "Type: DISEASE\nDegree: 4"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "lupus", "label": "lupus", "shape": "dot", "size": 20, "title": "Type: DISEASE\nDegree: 10"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "immunosuppression", "label": "immunosuppression", "shape": "dot", "size": 12, "title": "Type: CELL_TYPE\nDegree: 6"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "helios", "label": "helios", "shape": "dot", "size": 6, "title": "Type: CELL_TYPE\nDegree: 3"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "rejection", "label": "rejection", "shape": "dot", "size": 14, "title": "Type: DISEASE\nDegree: 7"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "t-regulatory", "label": "t-regulatory", "shape": "dot", "size": 4, "title": "Type: CELL_TYPE\nDegree: 2"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#FF7F0E", "font": {"color": "black"}, "id": "CD25", "label": "CD25", "shape": "dot", "size": 26, "title": "Type: GENE\nDegree: 13"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "3-methyladenine", "label": "3-methyladenine", "shape": "dot", "size": 2, "title": "Type: CHEMICAL\nDegree: 1"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "TGF-\u03b2", "label": "TGF-\u03b2", "shape": "dot", "size": 18, "title": "Type: CHEMICAL\nDegree: 9"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "diabetes", "label": "diabetes", "shape": "dot", "size": 2, "title": "Type: DISEASE\nDegree: 1"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#D62728", "font": {"color": "black"}, "id": "arthritis", "label": "arthritis", "shape": "dot", "size": 16, "title": "Type: DISEASE\nDegree: 8"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "bafilomycin", "label": "bafilomycin", "shape": "dot", "size": 2, "title": "Type: CHEMICAL\nDegree: 1"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "B cells", "label": "B cells", "shape": "dot", "size": 6, "title": "Type: CELL_TYPE\nDegree: 3"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "monocytes", "label": "monocytes", "shape": "dot", "size": 4, "title": "Type: CELL_TYPE\nDegree: 2"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "IL-1\u03b2", "label": "IL-1\u03b2", "shape": "dot", "size": 2, "title": "Type: CHEMICAL\nDegree: 1"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#2CA02C", "font": {"color": "black"}, "id": "chemokine", "label": "chemokine", "shape": "dot", "size": 2, "title": "Type: CHEMICAL\nDegree: 1"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#FF7F0E", "font": {"color": "black"}, "id": "STAT3", "label": "STAT3", "shape": "dot", "size": 6, "title": "Type: GENE\nDegree: 3"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "cd4+cd25+", "label": "cd4+cd25+", "shape": "dot", "size": 4, "title": "Type: CELL_TYPE\nDegree: 2"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "CD4+CD25+", "label": "CD4+CD25+", "shape": "dot", "size": 4, "title": "Type: CELL_TYPE\nDegree: 2"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "dendritic cell", "label": "dendritic cell", "shape": "dot", "size": 4, "title": "Type: CELL_TYPE\nDegree: 2"}, {"borderWidth": 2, "borderWidthSelected": 3, "color": "#1F77B4", "font": {"color": "black"}, "id": "CD8+", "label": "CD8+", "shape": "dot", "size": 2, "title": "Type: CELL_TYPE\nDegree: 1"}]);
+                  edges = new vis.DataSet([{"from": "FOXP3", "title": "Weight: 5", "to": "macrophages", "value": 5}, {"from": "FOXP3", "title": "Weight: 26", "to": "foxp3", "value": 26}, {"from": "FOXP3", "title": "Weight: 8", "to": "tregs", "value": 8}, {"from": "FOXP3", "title": "Weight: 2", "to": "macrophage", "value": 2}, {"from": "FOXP3", "title": "Weight: 3", "to": "LC3", "value": 3}, {"from": "FOXP3", "title": "Weight: 3", "to": "lc3", "value": 3}, {"from": "FOXP3", "title": "Weight: 3", "to": "protein", "value": 3}, {"from": "FOXP3", "title": "Weight: 1", "to": "ULK1", "value": 1}, {"from": "FOXP3", "title": "Weight: 3", "to": "atg16l1", "value": 3}, {"from": "FOXP3", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "rapamycin", "value": 1}, {"from": "FOXP3", "title": "Weight: 2", "to": "mtor", "value": 2}, {"from": "FOXP3", "title": "Weight: 1", "to": "ATG", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "Beclin", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "AMPK", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "beclin", "value": 1}, {"from": "FOXP3", "title": "Weight: 5", "to": "autophagy", "value": 5}, {"from": "FOXP3", "title": "Weight: 1", "to": "SQSTM1", "value": 1}, {"from": "FOXP3", "title": "Weight: 2", "to": "mTOR", "value": 2}, {"from": "FOXP3", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "ulk1", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "LPS", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "inflammatory bowel disease", "value": 1}, {"from": "FOXP3", "title": "Weight: 2", "to": "tumor", "value": 2}, {"from": "FOXP3", "title": "Weight: 1", "to": "IBD", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "colitis", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "ibd", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "dendritic cells", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "B cell", "value": 1}, {"from": "FOXP3", "title": "Weight: 13", "to": "Treg", "value": 13}, {"from": "FOXP3", "title": "Weight: 13", "to": "treg", "value": 13}, {"from": "FOXP3", "title": "Weight: 1", "to": "DCs", "value": 1}, {"from": "FOXP3", "title": "Weight: 3", "to": "cancer", "value": 3}, {"from": "FOXP3", "title": "Weight: 3", "to": "regulatory T cells", "value": 3}, {"from": "FOXP3", "title": "Weight: 3", "to": "regulatory t cells", "value": 3}, {"from": "FOXP3", "title": "Weight: 5", "to": "T cells", "value": 5}, {"from": "FOXP3", "title": "Weight: 1", "to": "IL-10", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "cytokine", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "eosinophil", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "il-10", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "suppressive", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "atg7", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "helios", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "CD8", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "CD4", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "infection", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "autophagic", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "autoimmune", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "inflammation", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "regulatory T cell", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "regulatory t cell", "value": 1}, {"from": "FOXP3", "title": "Weight: 1", "to": "T cell", "value": 1}, {"from": "macrophages", "title": "Weight: 4", "to": "LC3", "value": 4}, {"from": "macrophages", "title": "Weight: 2", "to": "lc3", "value": 2}, {"from": "macrophages", "title": "Weight: 2", "to": "protein", "value": 2}, {"from": "macrophages", "title": "Weight: 7", "to": "autophagy", "value": 7}, {"from": "macrophages", "title": "Weight: 1", "to": "LPS", "value": 1}, {"from": "macrophages", "title": "Weight: 1", "to": "BECN1", "value": 1}, {"from": "macrophages", "title": "Weight: 1", "to": "macroautophagy", "value": 1}, {"from": "macrophages", "title": "Weight: 1", "to": "lysosome", "value": 1}, {"from": "macrophages", "title": "Weight: 1", "to": "autophagosome", "value": 1}, {"from": "macrophages", "title": "Weight: 1", "to": "sqstm1/p62", "value": 1}, {"from": "macrophages", "title": "Weight: 2", "to": "p62", "value": 2}, {"from": "macrophages", "title": "Weight: 2", "to": "SQSTM1", "value": 2}, {"from": "macrophages", "title": "Weight: 2", "to": "inflammation", "value": 2}, {"from": "macrophages", "title": "Weight: 1", "to": "tumor", "value": 1}, {"from": "macrophages", "title": "Weight: 1", "to": "cancer", "value": 1}, {"from": "macrophages", "title": "Weight: 1", "to": "IL-10", "value": 1}, {"from": "macrophages", "title": "Weight: 1", "to": "CD4", "value": 1}, {"from": "macrophages", "title": "Weight: 1", "to": "arthritis", "value": 1}, {"from": "foxp3", "title": "Weight: 6", "to": "LC3", "value": 6}, {"from": "foxp3", "title": "Weight: 3", "to": "lc3", "value": 3}, {"from": "foxp3", "title": "Weight: 3", "to": "protein", "value": 3}, {"from": "foxp3", "title": "Weight: 2", "to": "ULK1", "value": 2}, {"from": "foxp3", "title": "Weight: 3", "to": "atg16l1", "value": 3}, {"from": "foxp3", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "foxp3", "title": "Weight: 1", "to": "rapamycin", "value": 1}, {"from": "foxp3", "title": "Weight: 2", "to": "mtor", "value": 2}, {"from": "foxp3", "title": "Weight: 2", "to": "ATG", "value": 2}, {"from": "foxp3", "title": "Weight: 1", "to": "Beclin", "value": 1}, {"from": "foxp3", "title": "Weight: 2", "to": "AMPK", "value": 2}, {"from": "foxp3", "title": "Weight: 1", "to": "beclin", "value": 1}, {"from": "foxp3", "title": "Weight: 5", "to": "autophagy", "value": 5}, {"from": "foxp3", "title": "Weight: 2", "to": "SQSTM1", "value": 2}, {"from": "foxp3", "title": "Weight: 4", "to": "mTOR", "value": 4}, {"from": "foxp3", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "foxp3", "title": "Weight: 1", "to": "ulk1", "value": 1}, {"from": "foxp3", "title": "Weight: 1", "to": "LPS", "value": 1}, {"from": "foxp3", "title": "Weight: 1", "to": "BECN1", "value": 1}, {"from": "foxp3", "title": "Weight: 1", "to": "inflammatory bowel disease", "value": 1}, {"from": "foxp3", "title": "Weight: 2", "to": "tumor", "value": 2}, {"from": "foxp3", "title": "Weight: 1", "to": "IBD", "value": 1}, {"from": "foxp3", "title": "Weight: 1", "to": "colitis", "value": 1}, {"from": "foxp3", "title": "Weight: 1", "to": "ibd", "value": 1}, {"from": "foxp3", "title": "Weight: 3", "to": "cancer", "value": 3}, {"from": "foxp3", "title": "Weight: 1", "to": "IL-10", "value": 1}, {"from": "foxp3", "title": "Weight: 1", "to": "cytokine", "value": 1}, {"from": "foxp3", "title": "Weight: 1", "to": "atg7", "value": 1}, {"from": "foxp3", "title": "Weight: 1", "to": "JAK3", "value": 1}, {"from": "foxp3", "title": "Weight: 1", "to": "CD8", "value": 1}, {"from": "foxp3", "title": "Weight: 1", "to": "CD4", "value": 1}, {"from": "foxp3", "title": "Weight: 1", "to": "infection", "value": 1}, {"from": "foxp3", "title": "Weight: 1", "to": "autophagic", "value": 1}, {"from": "foxp3", "title": "Weight: 1", "to": "autoimmune", "value": 1}, {"from": "foxp3", "title": "Weight: 1", "to": "inflammation", "value": 1}, {"from": "tregs", "title": "Weight: 3", "to": "cancer", "value": 3}, {"from": "tregs", "title": "Weight: 21", "to": "autophagy", "value": 21}, {"from": "tregs", "title": "Weight: 1", "to": "antibody", "value": 1}, {"from": "tregs", "title": "Weight: 1", "to": "chloroquine", "value": 1}, {"from": "tregs", "title": "Weight: 2", "to": "autoimmune", "value": 2}, {"from": "tregs", "title": "Weight: 2", "to": "gvhd", "value": 2}, {"from": "tregs", "title": "Weight: 6", "to": "LC3", "value": 6}, {"from": "tregs", "title": "Weight: 3", "to": "lc3", "value": 3}, {"from": "tregs", "title": "Weight: 1", "to": "JAK3", "value": 1}, {"from": "tregs", "title": "Weight: 2", "to": "autoimmunity", "value": 2}, {"from": "tregs", "title": "Weight: 1", "to": "malignancy", "value": 1}, {"from": "tregs", "title": "Weight: 1", "to": "allergy", "value": 1}, {"from": "tregs", "title": "Weight: 1", "to": "graft-versus-host", "value": 1}, {"from": "tregs", "title": "Weight: 1", "to": "transplantation", "value": 1}, {"from": "tregs", "title": "Weight: 2", "to": "ATG", "value": 2}, {"from": "tregs", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "tregs", "title": "Weight: 1", "to": "atg7", "value": 1}, {"from": "tregs", "title": "Weight: 7", "to": "inflammation", "value": 7}, {"from": "tregs", "title": "Weight: 3", "to": "LPS", "value": 3}, {"from": "tregs", "title": "Weight: 6", "to": "CD4", "value": 6}, {"from": "tregs", "title": "Weight: 2", "to": "protein", "value": 2}, {"from": "tregs", "title": "Weight: 2", "to": "tumor", "value": 2}, {"from": "tregs", "title": "Weight: 3", "to": "autophagic", "value": 3}, {"from": "tregs", "title": "Weight: 5", "to": "mitophagy", "value": 5}, {"from": "tregs", "title": "Weight: 6", "to": "CD25", "value": 6}, {"from": "tregs", "title": "Weight: 1", "to": "rapamycin", "value": 1}, {"from": "tregs", "title": "Weight: 1", "to": "3-methyladenine", "value": 1}, {"from": "tregs", "title": "Weight: 3", "to": "PD-1", "value": 3}, {"from": "tregs", "title": "Weight: 2", "to": "IL-6", "value": 2}, {"from": "tregs", "title": "Weight: 2", "to": "CD8", "value": 2}, {"from": "tregs", "title": "Weight: 4", "to": "p62", "value": 4}, {"from": "tregs", "title": "Weight: 2", "to": "TGF-\u03b2", "value": 2}, {"from": "tregs", "title": "Weight: 1", "to": "IL-10", "value": 1}, {"from": "tregs", "title": "Weight: 1", "to": "arthritis", "value": 1}, {"from": "tregs", "title": "Weight: 2", "to": "rejection", "value": 2}, {"from": "tregs", "title": "Weight: 1", "to": "infection", "value": 1}, {"from": "macrophage", "title": "Weight: 2", "to": "ULK1", "value": 2}, {"from": "macrophage", "title": "Weight: 2", "to": "LC3", "value": 2}, {"from": "macrophage", "title": "Weight: 1", "to": "atg16l1", "value": 1}, {"from": "macrophage", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "macrophage", "title": "Weight: 1", "to": "rapamycin", "value": 1}, {"from": "macrophage", "title": "Weight: 2", "to": "mtor", "value": 2}, {"from": "macrophage", "title": "Weight: 2", "to": "ATG", "value": 2}, {"from": "macrophage", "title": "Weight: 1", "to": "Beclin", "value": 1}, {"from": "macrophage", "title": "Weight: 2", "to": "AMPK", "value": 2}, {"from": "macrophage", "title": "Weight: 1", "to": "beclin", "value": 1}, {"from": "macrophage", "title": "Weight: 1", "to": "lc3", "value": 1}, {"from": "macrophage", "title": "Weight: 4", "to": "autophagy", "value": 4}, {"from": "macrophage", "title": "Weight: 1", "to": "protein", "value": 1}, {"from": "macrophage", "title": "Weight: 2", "to": "SQSTM1", "value": 2}, {"from": "macrophage", "title": "Weight: 4", "to": "mTOR", "value": 4}, {"from": "macrophage", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "macrophage", "title": "Weight: 1", "to": "ulk1", "value": 1}, {"from": "macrophage", "title": "Weight: 1", "to": "LPS", "value": 1}, {"from": "macrophage", "title": "Weight: 1", "to": "BECN1", "value": 1}, {"from": "macrophage", "title": "Weight: 1", "to": "inflammatory bowel disease", "value": 1}, {"from": "macrophage", "title": "Weight: 1", "to": "tumor", "value": 1}, {"from": "macrophage", "title": "Weight: 1", "to": "IBD", "value": 1}, {"from": "macrophage", "title": "Weight: 1", "to": "colitis", "value": 1}, {"from": "macrophage", "title": "Weight: 1", "to": "ibd", "value": 1}, {"from": "macrophage", "title": "Weight: 1", "to": "infectious", "value": 1}, {"from": "macrophage", "title": "Weight: 1", "to": "infection", "value": 1}, {"from": "LC3", "title": "Weight: 12", "to": "LC3", "value": 12}, {"from": "LC3", "title": "Weight: 12", "to": "lc3", "value": 12}, {"from": "LC3", "title": "Weight: 5", "to": "protein", "value": 5}, {"from": "LC3", "title": "Weight: 2", "to": "BECN1", "value": 2}, {"from": "LC3", "title": "Weight: 6", "to": "autophagy", "value": 6}, {"from": "LC3", "title": "Weight: 2", "to": "LPS", "value": 2}, {"from": "LC3", "title": "Weight: 2", "to": "ULK1", "value": 2}, {"from": "LC3", "title": "Weight: 2", "to": "AMPK", "value": 2}, {"from": "LC3", "title": "Weight: 2", "to": "SQSTM1", "value": 2}, {"from": "LC3", "title": "Weight: 2", "to": "mTOR", "value": 2}, {"from": "LC3", "title": "Weight: 2", "to": "ATG", "value": 2}, {"from": "LC3", "title": "Weight: 2", "to": "inflammatory bowel disease", "value": 2}, {"from": "LC3", "title": "Weight: 2", "to": "tumor", "value": 2}, {"from": "LC3", "title": "Weight: 2", "to": "IBD", "value": 2}, {"from": "LC3", "title": "Weight: 2", "to": "colitis", "value": 2}, {"from": "LC3", "title": "Weight: 2", "to": "ibd", "value": 2}, {"from": "LC3", "title": "Weight: 2", "to": "dendritic cells", "value": 2}, {"from": "LC3", "title": "Weight: 2", "to": "B cell", "value": 2}, {"from": "LC3", "title": "Weight: 4", "to": "Treg", "value": 4}, {"from": "LC3", "title": "Weight: 4", "to": "treg", "value": 4}, {"from": "LC3", "title": "Weight: 2", "to": "DCs", "value": 2}, {"from": "LC3", "title": "Weight: 1", "to": "atg16l1", "value": 1}, {"from": "LC3", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "LC3", "title": "Weight: 1", "to": "rapamycin", "value": 1}, {"from": "LC3", "title": "Weight: 1", "to": "mtor", "value": 1}, {"from": "LC3", "title": "Weight: 3", "to": "Beclin", "value": 3}, {"from": "LC3", "title": "Weight: 3", "to": "beclin", "value": 3}, {"from": "LC3", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "LC3", "title": "Weight: 1", "to": "ulk1", "value": 1}, {"from": "LC3", "title": "Weight: 4", "to": "T cells", "value": 4}, {"from": "LC3", "title": "Weight: 1", "to": "autophagic", "value": 1}, {"from": "LC3", "title": "Weight: 1", "to": "JAK3", "value": 1}, {"from": "LC3", "title": "Weight: 4", "to": "p62", "value": 4}, {"from": "LC3", "title": "Weight: 2", "to": "inflammation", "value": 2}, {"from": "LC3", "title": "Weight: 4", "to": "pd-1", "value": 4}, {"from": "LC3", "title": "Weight: 2", "to": "regulatory T cells", "value": 2}, {"from": "LC3", "title": "Weight: 2", "to": "regulatory t cells", "value": 2}, {"from": "LC3", "title": "Weight: 2", "to": "PD-1", "value": 2}, {"from": "LC3", "title": "Weight: 2", "to": "IL-6", "value": 2}, {"from": "LC3", "title": "Weight: 2", "to": "CD8", "value": 2}, {"from": "LC3", "title": "Weight: 2", "to": "TGF-\u03b2", "value": 2}, {"from": "LC3", "title": "Weight: 1", "to": "CD4", "value": 1}, {"from": "LC3", "title": "Weight: 2", "to": "il-10", "value": 2}, {"from": "LC3", "title": "Weight: 1", "to": "IL-10", "value": 1}, {"from": "lc3", "title": "Weight: 2", "to": "BECN1", "value": 2}, {"from": "lc3", "title": "Weight: 1", "to": "AMPK", "value": 1}, {"from": "lc3", "title": "Weight: 1", "to": "ULK1", "value": 1}, {"from": "lc3", "title": "Weight: 1", "to": "SQSTM1", "value": 1}, {"from": "lc3", "title": "Weight: 1", "to": "mTOR", "value": 1}, {"from": "lc3", "title": "Weight: 1", "to": "ATG", "value": 1}, {"from": "lc3", "title": "Weight: 1", "to": "inflammatory bowel disease", "value": 1}, {"from": "lc3", "title": "Weight: 1", "to": "tumor", "value": 1}, {"from": "lc3", "title": "Weight: 1", "to": "IBD", "value": 1}, {"from": "lc3", "title": "Weight: 1", "to": "colitis", "value": 1}, {"from": "lc3", "title": "Weight: 1", "to": "ibd", "value": 1}, {"from": "lc3", "title": "Weight: 1", "to": "dendritic cells", "value": 1}, {"from": "lc3", "title": "Weight: 1", "to": "B cell", "value": 1}, {"from": "lc3", "title": "Weight: 2", "to": "Treg", "value": 2}, {"from": "lc3", "title": "Weight: 2", "to": "treg", "value": 2}, {"from": "lc3", "title": "Weight: 1", "to": "DCs", "value": 1}, {"from": "lc3", "title": "Weight: 2", "to": "T cells", "value": 2}, {"from": "lc3", "title": "Weight: 1", "to": "JAK3", "value": 1}, {"from": "lc3", "title": "Weight: 2", "to": "p62", "value": 2}, {"from": "lc3", "title": "Weight: 1", "to": "inflammation", "value": 1}, {"from": "lc3", "title": "Weight: 2", "to": "pd-1", "value": 2}, {"from": "lc3", "title": "Weight: 1", "to": "regulatory T cells", "value": 1}, {"from": "lc3", "title": "Weight: 1", "to": "regulatory t cells", "value": 1}, {"from": "lc3", "title": "Weight: 1", "to": "il-10", "value": 1}, {"from": "protein", "title": "Weight: 2", "to": "BECN1", "value": 2}, {"from": "protein", "title": "Weight: 2", "to": "SQSTM1", "value": 2}, {"from": "protein", "title": "Weight: 3", "to": "p62", "value": 3}, {"from": "protein", "title": "Weight: 2", "to": "tumor", "value": 2}, {"from": "protein", "title": "Weight: 1", "to": "regulatory T cell", "value": 1}, {"from": "protein", "title": "Weight: 4", "to": "Treg", "value": 4}, {"from": "protein", "title": "Weight: 1", "to": "regulatory t cell", "value": 1}, {"from": "protein", "title": "Weight: 4", "to": "treg", "value": 4}, {"from": "protein", "title": "Weight: 3", "to": "T cell", "value": 3}, {"from": "protein", "title": "Weight: 3", "to": "AMPK", "value": 3}, {"from": "protein", "title": "Weight: 1", "to": "ULK1", "value": 1}, {"from": "protein", "title": "Weight: 3", "to": "mTOR", "value": 3}, {"from": "protein", "title": "Weight: 2", "to": "ATG", "value": 2}, {"from": "protein", "title": "Weight: 1", "to": "inflammatory bowel disease", "value": 1}, {"from": "protein", "title": "Weight: 1", "to": "IBD", "value": 1}, {"from": "protein", "title": "Weight: 1", "to": "colitis", "value": 1}, {"from": "protein", "title": "Weight: 1", "to": "ibd", "value": 1}, {"from": "protein", "title": "Weight: 1", "to": "dendritic cells", "value": 1}, {"from": "protein", "title": "Weight: 1", "to": "B cell", "value": 1}, {"from": "protein", "title": "Weight: 1", "to": "DCs", "value": 1}, {"from": "protein", "title": "Weight: 1", "to": "pd-1", "value": 1}, {"from": "protein", "title": "Weight: 1", "to": "autoimmunity", "value": 1}, {"from": "protein", "title": "Weight: 2", "to": "inflammation", "value": 2}, {"from": "protein", "title": "Weight: 1", "to": "lymphocyte", "value": 1}, {"from": "protein", "title": "Weight: 1", "to": "suppressive", "value": 1}, {"from": "protein", "title": "Weight: 1", "to": "T cells", "value": 1}, {"from": "protein", "title": "Weight: 1", "to": "lupus", "value": 1}, {"from": "BECN1", "title": "Weight: 3", "to": "autophagy", "value": 3}, {"from": "BECN1", "title": "Weight: 2", "to": "LPS", "value": 2}, {"from": "BECN1", "title": "Weight: 1", "to": "ULK1", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "atg16l1", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "rapamycin", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "mtor", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "ATG", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "Beclin", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "AMPK", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "beclin", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "SQSTM1", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "mTOR", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "ulk1", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "inflammatory bowel disease", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "tumor", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "IBD", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "colitis", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "ibd", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "dendritic cells", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "B cell", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "Treg", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "treg", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "DCs", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "IL-10", "value": 1}, {"from": "BECN1", "title": "Weight: 1", "to": "il-10", "value": 1}, {"from": "autophagy", "title": "Weight: 18", "to": "inflammation", "value": 18}, {"from": "autophagy", "title": "Weight: 4", "to": "IBD", "value": 4}, {"from": "autophagy", "title": "Weight: 4", "to": "ibd", "value": 4}, {"from": "autophagy", "title": "Weight: 2", "to": "AMPK", "value": 2}, {"from": "autophagy", "title": "Weight: 3", "to": "ULK1", "value": 3}, {"from": "autophagy", "title": "Weight: 3", "to": "SQSTM1", "value": 3}, {"from": "autophagy", "title": "Weight: 10", "to": "mTOR", "value": 10}, {"from": "autophagy", "title": "Weight: 3", "to": "ATG", "value": 3}, {"from": "autophagy", "title": "Weight: 2", "to": "inflammatory bowel disease", "value": 2}, {"from": "autophagy", "title": "Weight: 6", "to": "tumor", "value": 6}, {"from": "autophagy", "title": "Weight: 1", "to": "colitis", "value": 1}, {"from": "autophagy", "title": "Weight: 1", "to": "dendritic cells", "value": 1}, {"from": "autophagy", "title": "Weight: 1", "to": "B cell", "value": 1}, {"from": "autophagy", "title": "Weight: 23", "to": "Treg", "value": 23}, {"from": "autophagy", "title": "Weight: 23", "to": "treg", "value": 23}, {"from": "autophagy", "title": "Weight: 1", "to": "DCs", "value": 1}, {"from": "autophagy", "title": "Weight: 4", "to": "neutrophil", "value": 4}, {"from": "autophagy", "title": "Weight: 20", "to": "T cell", "value": 20}, {"from": "autophagy", "title": "Weight: 5", "to": "infection", "value": 5}, {"from": "autophagy", "title": "Weight: 2", "to": "lymphocytes", "value": 2}, {"from": "autophagy", "title": "Weight: 5", "to": "p62", "value": 5}, {"from": "autophagy", "title": "Weight: 1", "to": "MAP1LC3", "value": 1}, {"from": "autophagy", "title": "Weight: 1", "to": "regulatory T cell", "value": 1}, {"from": "autophagy", "title": "Weight: 1", "to": "regulatory t cell", "value": 1}, {"from": "autophagy", "title": "Weight: 27", "to": "T cells", "value": 27}, {"from": "autophagy", "title": "Weight: 1", "to": "natural killer", "value": 1}, {"from": "autophagy", "title": "Weight: 1", "to": "autoimmunity", "value": 1}, {"from": "autophagy", "title": "Weight: 4", "to": "regulatory T cells", "value": 4}, {"from": "autophagy", "title": "Weight: 4", "to": "regulatory t cells", "value": 4}, {"from": "autophagy", "title": "Weight: 3", "to": "cancer", "value": 3}, {"from": "autophagy", "title": "Weight: 2", "to": "neutrophils", "value": 2}, {"from": "autophagy", "title": "Weight: 1", "to": "allergic", "value": 1}, {"from": "autophagy", "title": "Weight: 1", "to": "eosinophils", "value": 1}, {"from": "autophagy", "title": "Weight: 4", "to": "lymphocyte", "value": 4}, {"from": "autophagy", "title": "Weight: 2", "to": "suppressive", "value": 2}, {"from": "autophagy", "title": "Weight: 5", "to": "CD4+", "value": 5}, {"from": "autophagy", "title": "Weight: 1", "to": "immune tolerance", "value": 1}, {"from": "autophagy", "title": "Weight: 2", "to": "asthma", "value": 2}, {"from": "autophagy", "title": "Weight: 2", "to": "gvhd", "value": 2}, {"from": "autophagy", "title": "Weight: 3", "to": "autoimmune", "value": 3}, {"from": "autophagy", "title": "Weight: 1", "to": "transplantation", "value": 1}, {"from": "autophagy", "title": "Weight: 2", "to": "lupus", "value": 2}, {"from": "autophagy", "title": "Weight: 3", "to": "il-10", "value": 3}, {"from": "autophagy", "title": "Weight: 2", "to": "t-regulatory", "value": 2}, {"from": "autophagy", "title": "Weight: 2", "to": "pd-1", "value": 2}, {"from": "autophagy", "title": "Weight: 1", "to": "STAT3", "value": 1}, {"from": "autophagy", "title": "Weight: 1", "to": "infectious", "value": 1}, {"from": "autophagy", "title": "Weight: 1", "to": "rejection", "value": 1}, {"from": "autophagy", "title": "Weight: 1", "to": "dendritic cell", "value": 1}, {"from": "LPS", "title": "Weight: 1", "to": "AMPK", "value": 1}, {"from": "LPS", "title": "Weight: 1", "to": "ULK1", "value": 1}, {"from": "LPS", "title": "Weight: 1", "to": "SQSTM1", "value": 1}, {"from": "LPS", "title": "Weight: 1", "to": "mTOR", "value": 1}, {"from": "LPS", "title": "Weight: 1", "to": "ATG", "value": 1}, {"from": "LPS", "title": "Weight: 1", "to": "inflammatory bowel disease", "value": 1}, {"from": "LPS", "title": "Weight: 1", "to": "tumor", "value": 1}, {"from": "LPS", "title": "Weight: 1", "to": "IBD", "value": 1}, {"from": "LPS", "title": "Weight: 1", "to": "colitis", "value": 1}, {"from": "LPS", "title": "Weight: 1", "to": "ibd", "value": 1}, {"from": "LPS", "title": "Weight: 1", "to": "dendritic cells", "value": 1}, {"from": "LPS", "title": "Weight: 1", "to": "B cell", "value": 1}, {"from": "LPS", "title": "Weight: 1", "to": "Treg", "value": 1}, {"from": "LPS", "title": "Weight: 1", "to": "treg", "value": 1}, {"from": "LPS", "title": "Weight: 1", "to": "DCs", "value": 1}, {"from": "LPS", "title": "Weight: 3", "to": "inflammation", "value": 3}, {"from": "sqstm1/p62", "title": "Weight: 3", "to": "SQSTM1", "value": 3}, {"from": "sqstm1/p62", "title": "Weight: 3", "to": "p62", "value": 3}, {"from": "sqstm1/p62", "title": "Weight: 2", "to": "tumor", "value": 2}, {"from": "sqstm1/p62", "title": "Weight: 2", "to": "regulatory T cell", "value": 2}, {"from": "sqstm1/p62", "title": "Weight: 3", "to": "Treg", "value": 3}, {"from": "sqstm1/p62", "title": "Weight: 2", "to": "regulatory t cell", "value": 2}, {"from": "sqstm1/p62", "title": "Weight: 3", "to": "treg", "value": 3}, {"from": "sqstm1/p62", "title": "Weight: 2", "to": "T cell", "value": 2}, {"from": "sqstm1/p62", "title": "Weight: 1", "to": "inflammation", "value": 1}, {"from": "sqstm1/p62", "title": "Weight: 1", "to": "MAP1LC3", "value": 1}, {"from": "SQSTM1", "title": "Weight: 6", "to": "p62", "value": 6}, {"from": "SQSTM1", "title": "Weight: 2", "to": "Beclin", "value": 2}, {"from": "SQSTM1", "title": "Weight: 2", "to": "beclin", "value": 2}, {"from": "SQSTM1", "title": "Weight: 4", "to": "SQSTM1", "value": 4}, {"from": "SQSTM1", "title": "Weight: 6", "to": "tumor", "value": 6}, {"from": "SQSTM1", "title": "Weight: 4", "to": "regulatory T cell", "value": 4}, {"from": "SQSTM1", "title": "Weight: 8", "to": "Treg", "value": 8}, {"from": "SQSTM1", "title": "Weight: 4", "to": "regulatory t cell", "value": 4}, {"from": "SQSTM1", "title": "Weight: 8", "to": "treg", "value": 8}, {"from": "SQSTM1", "title": "Weight: 4", "to": "T cell", "value": 4}, {"from": "SQSTM1", "title": "Weight: 2", "to": "ULK1", "value": 2}, {"from": "SQSTM1", "title": "Weight: 1", "to": "atg16l1", "value": 1}, {"from": "SQSTM1", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "SQSTM1", "title": "Weight: 1", "to": "rapamycin", "value": 1}, {"from": "SQSTM1", "title": "Weight: 1", "to": "mtor", "value": 1}, {"from": "SQSTM1", "title": "Weight: 2", "to": "ATG", "value": 2}, {"from": "SQSTM1", "title": "Weight: 2", "to": "AMPK", "value": 2}, {"from": "SQSTM1", "title": "Weight: 2", "to": "mTOR", "value": 2}, {"from": "SQSTM1", "title": "Weight: 2", "to": "inflammatory bowel disease", "value": 2}, {"from": "SQSTM1", "title": "Weight: 2", "to": "IBD", "value": 2}, {"from": "SQSTM1", "title": "Weight: 2", "to": "colitis", "value": 2}, {"from": "SQSTM1", "title": "Weight: 2", "to": "ibd", "value": 2}, {"from": "SQSTM1", "title": "Weight: 2", "to": "dendritic cells", "value": 2}, {"from": "SQSTM1", "title": "Weight: 2", "to": "B cell", "value": 2}, {"from": "SQSTM1", "title": "Weight: 2", "to": "DCs", "value": 2}, {"from": "SQSTM1", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "SQSTM1", "title": "Weight: 1", "to": "ulk1", "value": 1}, {"from": "SQSTM1", "title": "Weight: 2", "to": "inflammation", "value": 2}, {"from": "SQSTM1", "title": "Weight: 1", "to": "MAP1LC3", "value": 1}, {"from": "p62", "title": "Weight: 9", "to": "p62", "value": 9}, {"from": "p62", "title": "Weight: 4", "to": "tumor", "value": 4}, {"from": "p62", "title": "Weight: 4", "to": "regulatory T cell", "value": 4}, {"from": "p62", "title": "Weight: 6", "to": "Treg", "value": 6}, {"from": "p62", "title": "Weight: 4", "to": "regulatory t cell", "value": 4}, {"from": "p62", "title": "Weight: 6", "to": "treg", "value": 6}, {"from": "p62", "title": "Weight: 4", "to": "T cell", "value": 4}, {"from": "p62", "title": "Weight: 1", "to": "Beclin", "value": 1}, {"from": "p62", "title": "Weight: 1", "to": "beclin", "value": 1}, {"from": "p62", "title": "Weight: 4", "to": "inflammation", "value": 4}, {"from": "p62", "title": "Weight: 1", "to": "MAP1LC3", "value": 1}, {"from": "p62", "title": "Weight: 3", "to": "IL-6", "value": 3}, {"from": "p62", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "p62", "title": "Weight: 1", "to": "rapamycin", "value": 1}, {"from": "p62", "title": "Weight: 1", "to": "mtor", "value": 1}, {"from": "p62", "title": "Weight: 2", "to": "AMPK", "value": 2}, {"from": "p62", "title": "Weight: 2", "to": "mTOR", "value": 2}, {"from": "p62", "title": "Weight: 1", "to": "TNF-\u03b1", "value": 1}, {"from": "p62", "title": "Weight: 2", "to": "autophagosome", "value": 2}, {"from": "p62", "title": "Weight: 2", "to": "CD4", "value": 2}, {"from": "p62", "title": "Weight: 1", "to": "autophagic", "value": 1}, {"from": "p62", "title": "Weight: 2", "to": "PD-1", "value": 2}, {"from": "p62", "title": "Weight: 2", "to": "CD8", "value": 2}, {"from": "p62", "title": "Weight: 4", "to": "pd-1", "value": 4}, {"from": "p62", "title": "Weight: 2", "to": "regulatory T cells", "value": 2}, {"from": "p62", "title": "Weight: 2", "to": "regulatory t cells", "value": 2}, {"from": "p62", "title": "Weight: 2", "to": "T cells", "value": 2}, {"from": "p62", "title": "Weight: 2", "to": "TGF-\u03b2", "value": 2}, {"from": "p62", "title": "Weight: 2", "to": "il-10", "value": 2}, {"from": "p62", "title": "Weight: 1", "to": "IL-10", "value": 1}, {"from": "tumor", "title": "Weight: 2", "to": "Beclin", "value": 2}, {"from": "tumor", "title": "Weight: 2", "to": "beclin", "value": 2}, {"from": "tumor", "title": "Weight: 3", "to": "regulatory T cell", "value": 3}, {"from": "tumor", "title": "Weight: 6", "to": "Treg", "value": 6}, {"from": "tumor", "title": "Weight: 3", "to": "regulatory t cell", "value": 3}, {"from": "tumor", "title": "Weight: 6", "to": "treg", "value": 6}, {"from": "tumor", "title": "Weight: 3", "to": "T cell", "value": 3}, {"from": "tumor", "title": "Weight: 2", "to": "ULK1", "value": 2}, {"from": "tumor", "title": "Weight: 1", "to": "atg16l1", "value": 1}, {"from": "tumor", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "tumor", "title": "Weight: 1", "to": "rapamycin", "value": 1}, {"from": "tumor", "title": "Weight: 1", "to": "mtor", "value": 1}, {"from": "tumor", "title": "Weight: 2", "to": "ATG", "value": 2}, {"from": "tumor", "title": "Weight: 2", "to": "AMPK", "value": 2}, {"from": "tumor", "title": "Weight: 2", "to": "mTOR", "value": 2}, {"from": "tumor", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "tumor", "title": "Weight: 1", "to": "ulk1", "value": 1}, {"from": "tumor", "title": "Weight: 1", "to": "dendritic cells", "value": 1}, {"from": "tumor", "title": "Weight: 1", "to": "B cell", "value": 1}, {"from": "tumor", "title": "Weight: 1", "to": "DCs", "value": 1}, {"from": "tumor", "title": "Weight: 1", "to": "MAP1LC3", "value": 1}, {"from": "tumor", "title": "Weight: 1", "to": "self-tolerance", "value": 1}, {"from": "tumor", "title": "Weight: 1", "to": "T cells", "value": 1}, {"from": "tumor", "title": "Weight: 1", "to": "atg5", "value": 1}, {"from": "tumor", "title": "Weight: 1", "to": "atg7", "value": 1}, {"from": "tumor", "title": "Weight: 1", "to": "immunosuppression", "value": 1}, {"from": "tumor", "title": "Weight: 1", "to": "IFN-\u03b3", "value": 1}, {"from": "regulatory T cell", "title": "Weight: 1", "to": "Beclin", "value": 1}, {"from": "regulatory T cell", "title": "Weight: 1", "to": "beclin", "value": 1}, {"from": "regulatory T cell", "title": "Weight: 1", "to": "MAP1LC3", "value": 1}, {"from": "regulatory T cell", "title": "Weight: 1", "to": "graft-versus-host", "value": 1}, {"from": "regulatory T cell", "title": "Weight: 2", "to": "transplantation", "value": 2}, {"from": "regulatory T cell", "title": "Weight: 1", "to": "gvhd", "value": 1}, {"from": "regulatory T cell", "title": "Weight: 1", "to": "cancer", "value": 1}, {"from": "Treg", "title": "Weight: 2", "to": "Beclin", "value": 2}, {"from": "Treg", "title": "Weight: 2", "to": "beclin", "value": 2}, {"from": "Treg", "title": "Weight: 2", "to": "IBD", "value": 2}, {"from": "Treg", "title": "Weight: 2", "to": "ibd", "value": 2}, {"from": "Treg", "title": "Weight: 10", "to": "ULK1", "value": 10}, {"from": "Treg", "title": "Weight: 3", "to": "atg16l1", "value": 3}, {"from": "Treg", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "Treg", "title": "Weight: 3", "to": "rapamycin", "value": 3}, {"from": "Treg", "title": "Weight: 4", "to": "mtor", "value": 4}, {"from": "Treg", "title": "Weight: 2", "to": "ATG", "value": 2}, {"from": "Treg", "title": "Weight: 2", "to": "AMPK", "value": 2}, {"from": "Treg", "title": "Weight: 8", "to": "mTOR", "value": 8}, {"from": "Treg", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "Treg", "title": "Weight: 5", "to": "ulk1", "value": 5}, {"from": "Treg", "title": "Weight: 1", "to": "inflammatory bowel disease", "value": 1}, {"from": "Treg", "title": "Weight: 1", "to": "colitis", "value": 1}, {"from": "Treg", "title": "Weight: 3", "to": "inflammation", "value": 3}, {"from": "Treg", "title": "Weight: 1", "to": "MAP1LC3", "value": 1}, {"from": "Treg", "title": "Weight: 2", "to": "atg5", "value": 2}, {"from": "Treg", "title": "Weight: 1", "to": "CTLA-4", "value": 1}, {"from": "Treg", "title": "Weight: 1", "to": "IFN-\u03b3", "value": 1}, {"from": "Treg", "title": "Weight: 4", "to": "IL-10", "value": 4}, {"from": "Treg", "title": "Weight: 1", "to": "cytokine", "value": 1}, {"from": "Treg", "title": "Weight: 8", "to": "cancer", "value": 8}, {"from": "Treg", "title": "Weight: 7", "to": "autoimmune", "value": 7}, {"from": "Treg", "title": "Weight: 3", "to": "CD8", "value": 3}, {"from": "Treg", "title": "Weight: 5", "to": "CD4", "value": 5}, {"from": "Treg", "title": "Weight: 1", "to": "mitophagy", "value": 1}, {"from": "Treg", "title": "Weight: 2", "to": "transplantation", "value": 2}, {"from": "Treg", "title": "Weight: 3", "to": "gvhd", "value": 3}, {"from": "Treg", "title": "Weight: 2", "to": "infection", "value": 2}, {"from": "Treg", "title": "Weight: 4", "to": "atg7", "value": 4}, {"from": "Treg", "title": "Weight: 1", "to": "JAK3", "value": 1}, {"from": "Treg", "title": "Weight: 1", "to": "autophagic", "value": 1}, {"from": "Treg", "title": "Weight: 4", "to": "autoimmunity", "value": 4}, {"from": "Treg", "title": "Weight: 2", "to": "rejection", "value": 2}, {"from": "Treg", "title": "Weight: 2", "to": "CD25", "value": 2}, {"from": "Treg", "title": "Weight: 1", "to": "arthritis", "value": 1}, {"from": "regulatory t cell", "title": "Weight: 1", "to": "Beclin", "value": 1}, {"from": "regulatory t cell", "title": "Weight: 1", "to": "beclin", "value": 1}, {"from": "regulatory t cell", "title": "Weight: 1", "to": "MAP1LC3", "value": 1}, {"from": "regulatory t cell", "title": "Weight: 1", "to": "graft-versus-host", "value": 1}, {"from": "regulatory t cell", "title": "Weight: 2", "to": "transplantation", "value": 2}, {"from": "regulatory t cell", "title": "Weight: 1", "to": "gvhd", "value": 1}, {"from": "regulatory t cell", "title": "Weight: 1", "to": "cancer", "value": 1}, {"from": "treg", "title": "Weight: 2", "to": "Beclin", "value": 2}, {"from": "treg", "title": "Weight: 2", "to": "beclin", "value": 2}, {"from": "treg", "title": "Weight: 2", "to": "IBD", "value": 2}, {"from": "treg", "title": "Weight: 2", "to": "ibd", "value": 2}, {"from": "treg", "title": "Weight: 10", "to": "ULK1", "value": 10}, {"from": "treg", "title": "Weight: 3", "to": "atg16l1", "value": 3}, {"from": "treg", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "treg", "title": "Weight: 3", "to": "rapamycin", "value": 3}, {"from": "treg", "title": "Weight: 4", "to": "mtor", "value": 4}, {"from": "treg", "title": "Weight: 2", "to": "ATG", "value": 2}, {"from": "treg", "title": "Weight: 2", "to": "AMPK", "value": 2}, {"from": "treg", "title": "Weight: 8", "to": "mTOR", "value": 8}, {"from": "treg", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "treg", "title": "Weight: 5", "to": "ulk1", "value": 5}, {"from": "treg", "title": "Weight: 1", "to": "inflammatory bowel disease", "value": 1}, {"from": "treg", "title": "Weight: 1", "to": "colitis", "value": 1}, {"from": "treg", "title": "Weight: 3", "to": "inflammation", "value": 3}, {"from": "treg", "title": "Weight: 1", "to": "MAP1LC3", "value": 1}, {"from": "treg", "title": "Weight: 2", "to": "atg5", "value": 2}, {"from": "treg", "title": "Weight: 1", "to": "CTLA-4", "value": 1}, {"from": "treg", "title": "Weight: 1", "to": "IFN-\u03b3", "value": 1}, {"from": "treg", "title": "Weight: 4", "to": "IL-10", "value": 4}, {"from": "treg", "title": "Weight: 1", "to": "cytokine", "value": 1}, {"from": "treg", "title": "Weight: 8", "to": "cancer", "value": 8}, {"from": "treg", "title": "Weight: 7", "to": "autoimmune", "value": 7}, {"from": "treg", "title": "Weight: 3", "to": "CD8", "value": 3}, {"from": "treg", "title": "Weight: 5", "to": "CD4", "value": 5}, {"from": "treg", "title": "Weight: 1", "to": "mitophagy", "value": 1}, {"from": "treg", "title": "Weight: 2", "to": "transplantation", "value": 2}, {"from": "treg", "title": "Weight: 3", "to": "gvhd", "value": 3}, {"from": "treg", "title": "Weight: 2", "to": "infection", "value": 2}, {"from": "treg", "title": "Weight: 4", "to": "atg7", "value": 4}, {"from": "treg", "title": "Weight: 1", "to": "JAK3", "value": 1}, {"from": "treg", "title": "Weight: 1", "to": "autophagic", "value": 1}, {"from": "treg", "title": "Weight: 4", "to": "autoimmunity", "value": 4}, {"from": "treg", "title": "Weight: 2", "to": "rejection", "value": 2}, {"from": "treg", "title": "Weight: 2", "to": "CD25", "value": 2}, {"from": "treg", "title": "Weight: 1", "to": "arthritis", "value": 1}, {"from": "T cell", "title": "Weight: 2", "to": "Beclin", "value": 2}, {"from": "T cell", "title": "Weight: 2", "to": "beclin", "value": 2}, {"from": "T cell", "title": "Weight: 1", "to": "MAP1LC3", "value": 1}, {"from": "T cell", "title": "Weight: 2", "to": "mitophagy", "value": 2}, {"from": "T cell", "title": "Weight: 13", "to": "CD4", "value": 13}, {"from": "T cell", "title": "Weight: 2", "to": "cytokine", "value": 2}, {"from": "T cell", "title": "Weight: 4", "to": "CD8", "value": 4}, {"from": "T cell", "title": "Weight: 5", "to": "mtor", "value": 5}, {"from": "T cell", "title": "Weight: 10", "to": "mTOR", "value": 10}, {"from": "T cell", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "T cell", "title": "Weight: 1", "to": "rapamycin", "value": 1}, {"from": "T cell", "title": "Weight: 2", "to": "AMPK", "value": 2}, {"from": "T cell", "title": "Weight: 1", "to": "graft-versus-host", "value": 1}, {"from": "T cell", "title": "Weight: 2", "to": "transplantation", "value": 2}, {"from": "T cell", "title": "Weight: 1", "to": "gvhd", "value": 1}, {"from": "T cell", "title": "Weight: 1", "to": "diabetes", "value": 1}, {"from": "T cell", "title": "Weight: 3", "to": "inflammation", "value": 3}, {"from": "T cell", "title": "Weight: 1", "to": "IL-6", "value": 1}, {"from": "T cell", "title": "Weight: 1", "to": "IL-10", "value": 1}, {"from": "T cell", "title": "Weight: 1", "to": "IFN-\u03b3", "value": 1}, {"from": "T cell", "title": "Weight: 1", "to": "cancer", "value": 1}, {"from": "Beclin", "title": "Weight: 1", "to": "AMPK", "value": 1}, {"from": "Beclin", "title": "Weight: 1", "to": "ULK1", "value": 1}, {"from": "Beclin", "title": "Weight: 1", "to": "mTOR", "value": 1}, {"from": "Beclin", "title": "Weight: 1", "to": "ATG", "value": 1}, {"from": "Beclin", "title": "Weight: 1", "to": "inflammatory bowel disease", "value": 1}, {"from": "Beclin", "title": "Weight: 1", "to": "IBD", "value": 1}, {"from": "Beclin", "title": "Weight: 1", "to": "colitis", "value": 1}, {"from": "Beclin", "title": "Weight: 1", "to": "ibd", "value": 1}, {"from": "Beclin", "title": "Weight: 1", "to": "dendritic cells", "value": 1}, {"from": "Beclin", "title": "Weight: 1", "to": "B cell", "value": 1}, {"from": "Beclin", "title": "Weight: 1", "to": "DCs", "value": 1}, {"from": "Beclin", "title": "Weight: 2", "to": "CD4+", "value": 2}, {"from": "Beclin", "title": "Weight: 1", "to": "lymphocytes", "value": 1}, {"from": "Beclin", "title": "Weight: 2", "to": "T cells", "value": 2}, {"from": "Beclin", "title": "Weight: 1", "to": "autoimmune", "value": 1}, {"from": "beclin", "title": "Weight: 1", "to": "AMPK", "value": 1}, {"from": "beclin", "title": "Weight: 1", "to": "ULK1", "value": 1}, {"from": "beclin", "title": "Weight: 1", "to": "mTOR", "value": 1}, {"from": "beclin", "title": "Weight: 1", "to": "ATG", "value": 1}, {"from": "beclin", "title": "Weight: 1", "to": "inflammatory bowel disease", "value": 1}, {"from": "beclin", "title": "Weight: 1", "to": "IBD", "value": 1}, {"from": "beclin", "title": "Weight: 1", "to": "colitis", "value": 1}, {"from": "beclin", "title": "Weight: 1", "to": "ibd", "value": 1}, {"from": "beclin", "title": "Weight: 1", "to": "dendritic cells", "value": 1}, {"from": "beclin", "title": "Weight: 1", "to": "B cell", "value": 1}, {"from": "beclin", "title": "Weight: 1", "to": "DCs", "value": 1}, {"from": "beclin", "title": "Weight: 2", "to": "CD4+", "value": 2}, {"from": "beclin", "title": "Weight: 1", "to": "lymphocytes", "value": 1}, {"from": "beclin", "title": "Weight: 2", "to": "T cells", "value": 2}, {"from": "beclin", "title": "Weight: 1", "to": "autoimmune", "value": 1}, {"from": "peptide", "title": "Weight: 1", "to": "inflammation", "value": 1}, {"from": "inflammation", "title": "Weight: 2", "to": "eosinophils", "value": 2}, {"from": "inflammation", "title": "Weight: 1", "to": "macroautophagy", "value": 1}, {"from": "inflammation", "title": "Weight: 1", "to": "cytokine", "value": 1}, {"from": "inflammation", "title": "Weight: 4", "to": "regulatory T cells", "value": 4}, {"from": "inflammation", "title": "Weight: 4", "to": "regulatory t cells", "value": 4}, {"from": "inflammation", "title": "Weight: 5", "to": "T cells", "value": 5}, {"from": "inflammation", "title": "Weight: 1", "to": "atg7", "value": 1}, {"from": "inflammation", "title": "Weight: 2", "to": "IL-10", "value": 2}, {"from": "inflammation", "title": "Weight: 2", "to": "il-10", "value": 2}, {"from": "inflammation", "title": "Weight: 2", "to": "t-regulatory", "value": 2}, {"from": "inflammation", "title": "Weight: 1", "to": "PD-1", "value": 1}, {"from": "inflammation", "title": "Weight: 2", "to": "IL-6", "value": 2}, {"from": "inflammation", "title": "Weight: 1", "to": "CD8", "value": 1}, {"from": "inflammation", "title": "Weight: 1", "to": "TGF-\u03b2", "value": 1}, {"from": "inflammation", "title": "Weight: 2", "to": "CD4", "value": 2}, {"from": "inflammation", "title": "Weight: 1", "to": "pd-1", "value": 1}, {"from": "inflammation", "title": "Weight: 1", "to": "atg16l1", "value": 1}, {"from": "inflammation", "title": "Weight: 1", "to": "neutrophils", "value": 1}, {"from": "IBD", "title": "Weight: 1", "to": "T cells", "value": 1}, {"from": "IBD", "title": "Weight: 2", "to": "ULK1", "value": 2}, {"from": "IBD", "title": "Weight: 2", "to": "atg16l1", "value": 2}, {"from": "IBD", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "IBD", "title": "Weight: 1", "to": "rapamycin", "value": 1}, {"from": "IBD", "title": "Weight: 1", "to": "mtor", "value": 1}, {"from": "IBD", "title": "Weight: 2", "to": "ATG", "value": 2}, {"from": "IBD", "title": "Weight: 2", "to": "AMPK", "value": 2}, {"from": "IBD", "title": "Weight: 2", "to": "mTOR", "value": 2}, {"from": "IBD", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "IBD", "title": "Weight: 1", "to": "ulk1", "value": 1}, {"from": "IBD", "title": "Weight: 1", "to": "dendritic cells", "value": 1}, {"from": "IBD", "title": "Weight: 1", "to": "B cell", "value": 1}, {"from": "IBD", "title": "Weight: 1", "to": "DCs", "value": 1}, {"from": "T cells", "title": "Weight: 1", "to": "ibd", "value": 1}, {"from": "T cells", "title": "Weight: 16", "to": "CD8", "value": 16}, {"from": "T cells", "title": "Weight: 2", "to": "mitophagy", "value": 2}, {"from": "T cells", "title": "Weight: 3", "to": "cancer", "value": 3}, {"from": "T cells", "title": "Weight: 2", "to": "PD-1", "value": 2}, {"from": "T cells", "title": "Weight: 24", "to": "CD4", "value": 24}, {"from": "T cells", "title": "Weight: 1", "to": "IL-10", "value": 1}, {"from": "T cells", "title": "Weight: 1", "to": "cytokine", "value": 1}, {"from": "T cells", "title": "Weight: 1", "to": "antibody", "value": 1}, {"from": "T cells", "title": "Weight: 3", "to": "autoimmune", "value": 3}, {"from": "T cells", "title": "Weight: 1", "to": "transplantation", "value": 1}, {"from": "T cells", "title": "Weight: 1", "to": "gvhd", "value": 1}, {"from": "T cells", "title": "Weight: 2", "to": "autoimmunity", "value": 2}, {"from": "T cells", "title": "Weight: 2", "to": "autophagic", "value": 2}, {"from": "T cells", "title": "Weight: 1", "to": "infection", "value": 1}, {"from": "T cells", "title": "Weight: 6", "to": "CD25", "value": 6}, {"from": "T cells", "title": "Weight: 1", "to": "IL-6", "value": 1}, {"from": "T cells", "title": "Weight: 1", "to": "TGF-\u03b2", "value": 1}, {"from": "T cells", "title": "Weight: 1", "to": "arthritis", "value": 1}, {"from": "T cells", "title": "Weight: 3", "to": "mtor", "value": 3}, {"from": "T cells", "title": "Weight: 6", "to": "mTOR", "value": 6}, {"from": "T cells", "title": "Weight: 2", "to": "IFN-\u03b3", "value": 2}, {"from": "T cells", "title": "Weight: 1", "to": "atg16l1", "value": 1}, {"from": "T cells", "title": "Weight: 1", "to": "chemokine", "value": 1}, {"from": "T cells", "title": "Weight: 1", "to": "rejection", "value": 1}, {"from": "ibd", "title": "Weight: 2", "to": "ULK1", "value": 2}, {"from": "ibd", "title": "Weight: 2", "to": "atg16l1", "value": 2}, {"from": "ibd", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "ibd", "title": "Weight: 1", "to": "rapamycin", "value": 1}, {"from": "ibd", "title": "Weight: 1", "to": "mtor", "value": 1}, {"from": "ibd", "title": "Weight: 2", "to": "ATG", "value": 2}, {"from": "ibd", "title": "Weight: 2", "to": "AMPK", "value": 2}, {"from": "ibd", "title": "Weight: 2", "to": "mTOR", "value": 2}, {"from": "ibd", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "ibd", "title": "Weight: 1", "to": "ulk1", "value": 1}, {"from": "ibd", "title": "Weight: 1", "to": "dendritic cells", "value": 1}, {"from": "ibd", "title": "Weight: 1", "to": "B cell", "value": 1}, {"from": "ibd", "title": "Weight: 1", "to": "DCs", "value": 1}, {"from": "ULK1", "title": "Weight: 2", "to": "AMPK", "value": 2}, {"from": "ULK1", "title": "Weight: 8", "to": "ULK1", "value": 8}, {"from": "ULK1", "title": "Weight: 2", "to": "mTOR", "value": 2}, {"from": "ULK1", "title": "Weight: 2", "to": "ATG", "value": 2}, {"from": "ULK1", "title": "Weight: 2", "to": "inflammatory bowel disease", "value": 2}, {"from": "ULK1", "title": "Weight: 2", "to": "colitis", "value": 2}, {"from": "ULK1", "title": "Weight: 2", "to": "dendritic cells", "value": 2}, {"from": "ULK1", "title": "Weight: 2", "to": "B cell", "value": 2}, {"from": "ULK1", "title": "Weight: 2", "to": "DCs", "value": 2}, {"from": "ULK1", "title": "Weight: 1", "to": "atg16l1", "value": 1}, {"from": "ULK1", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "ULK1", "title": "Weight: 1", "to": "rapamycin", "value": 1}, {"from": "ULK1", "title": "Weight: 1", "to": "mtor", "value": 1}, {"from": "ULK1", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "ULK1", "title": "Weight: 8", "to": "ulk1", "value": 8}, {"from": "ULK1", "title": "Weight: 2", "to": "autoimmunity", "value": 2}, {"from": "ULK1", "title": "Weight: 2", "to": "cancer", "value": 2}, {"from": "AMPK", "title": "Weight: 1", "to": "atg16l1", "value": 1}, {"from": "AMPK", "title": "Weight: 3", "to": "ampk", "value": 3}, {"from": "AMPK", "title": "Weight: 3", "to": "rapamycin", "value": 3}, {"from": "AMPK", "title": "Weight: 3", "to": "mtor", "value": 3}, {"from": "AMPK", "title": "Weight: 2", "to": "ATG", "value": 2}, {"from": "AMPK", "title": "Weight: 3", "to": "AMPK", "value": 3}, {"from": "AMPK", "title": "Weight: 6", "to": "mTOR", "value": 6}, {"from": "AMPK", "title": "Weight: 2", "to": "inflammatory bowel disease", "value": 2}, {"from": "AMPK", "title": "Weight: 2", "to": "colitis", "value": 2}, {"from": "AMPK", "title": "Weight: 2", "to": "dendritic cells", "value": 2}, {"from": "AMPK", "title": "Weight: 2", "to": "B cell", "value": 2}, {"from": "AMPK", "title": "Weight: 2", "to": "DCs", "value": 2}, {"from": "AMPK", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "AMPK", "title": "Weight: 1", "to": "ulk1", "value": 1}, {"from": "AMPK", "title": "Weight: 1", "to": "IL-6", "value": 1}, {"from": "AMPK", "title": "Weight: 1", "to": "TNF-\u03b1", "value": 1}, {"from": "AMPK", "title": "Weight: 1", "to": "autophagosome", "value": 1}, {"from": "mTOR", "title": "Weight: 1", "to": "atg16l1", "value": 1}, {"from": "mTOR", "title": "Weight: 3", "to": "ampk", "value": 3}, {"from": "mTOR", "title": "Weight: 7", "to": "rapamycin", "value": 7}, {"from": "mTOR", "title": "Weight: 20", "to": "mtor", "value": 20}, {"from": "mTOR", "title": "Weight: 2", "to": "ATG", "value": 2}, {"from": "mTOR", "title": "Weight: 20", "to": "mTOR", "value": 20}, {"from": "mTOR", "title": "Weight: 2", "to": "inflammatory bowel disease", "value": 2}, {"from": "mTOR", "title": "Weight: 2", "to": "colitis", "value": 2}, {"from": "mTOR", "title": "Weight: 2", "to": "dendritic cells", "value": 2}, {"from": "mTOR", "title": "Weight: 2", "to": "B cell", "value": 2}, {"from": "mTOR", "title": "Weight: 2", "to": "DCs", "value": 2}, {"from": "mTOR", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "mTOR", "title": "Weight: 1", "to": "ulk1", "value": 1}, {"from": "mTOR", "title": "Weight: 1", "to": "lysosome", "value": 1}, {"from": "mTOR", "title": "Weight: 1", "to": "IL-6", "value": 1}, {"from": "mTOR", "title": "Weight: 1", "to": "TNF-\u03b1", "value": 1}, {"from": "mTOR", "title": "Weight: 1", "to": "autophagosome", "value": 1}, {"from": "mTOR", "title": "Weight: 1", "to": "autophagic", "value": 1}, {"from": "mTOR", "title": "Weight: 2", "to": "helios", "value": 2}, {"from": "mTOR", "title": "Weight: 1", "to": "bafilomycin", "value": 1}, {"from": "mTOR", "title": "Weight: 2", "to": "lupus", "value": 2}, {"from": "mTOR", "title": "Weight: 1", "to": "STAT3", "value": 1}, {"from": "ATG", "title": "Weight: 2", "to": "atg16l1", "value": 2}, {"from": "ATG", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "ATG", "title": "Weight: 1", "to": "rapamycin", "value": 1}, {"from": "ATG", "title": "Weight: 1", "to": "mtor", "value": 1}, {"from": "ATG", "title": "Weight: 3", "to": "ATG", "value": 3}, {"from": "ATG", "title": "Weight: 2", "to": "inflammatory bowel disease", "value": 2}, {"from": "ATG", "title": "Weight: 2", "to": "colitis", "value": 2}, {"from": "ATG", "title": "Weight: 2", "to": "dendritic cells", "value": 2}, {"from": "ATG", "title": "Weight: 2", "to": "B cell", "value": 2}, {"from": "ATG", "title": "Weight: 2", "to": "DCs", "value": 2}, {"from": "ATG", "title": "Weight: 3", "to": "atg", "value": 3}, {"from": "ATG", "title": "Weight: 1", "to": "ulk1", "value": 1}, {"from": "inflammatory bowel disease", "title": "Weight: 2", "to": "atg16l1", "value": 2}, {"from": "inflammatory bowel disease", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "inflammatory bowel disease", "title": "Weight: 1", "to": "rapamycin", "value": 1}, {"from": "inflammatory bowel disease", "title": "Weight: 1", "to": "mtor", "value": 1}, {"from": "inflammatory bowel disease", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "inflammatory bowel disease", "title": "Weight: 1", "to": "ulk1", "value": 1}, {"from": "inflammatory bowel disease", "title": "Weight: 1", "to": "dendritic cells", "value": 1}, {"from": "inflammatory bowel disease", "title": "Weight: 1", "to": "B cell", "value": 1}, {"from": "inflammatory bowel disease", "title": "Weight: 1", "to": "DCs", "value": 1}, {"from": "colitis", "title": "Weight: 1", "to": "atg16l1", "value": 1}, {"from": "colitis", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "colitis", "title": "Weight: 1", "to": "rapamycin", "value": 1}, {"from": "colitis", "title": "Weight: 1", "to": "mtor", "value": 1}, {"from": "colitis", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "colitis", "title": "Weight: 1", "to": "ulk1", "value": 1}, {"from": "colitis", "title": "Weight: 1", "to": "dendritic cells", "value": 1}, {"from": "colitis", "title": "Weight: 1", "to": "B cell", "value": 1}, {"from": "colitis", "title": "Weight: 1", "to": "DCs", "value": 1}, {"from": "dendritic cells", "title": "Weight: 1", "to": "atg16l1", "value": 1}, {"from": "dendritic cells", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "dendritic cells", "title": "Weight: 1", "to": "rapamycin", "value": 1}, {"from": "dendritic cells", "title": "Weight: 1", "to": "mtor", "value": 1}, {"from": "dendritic cells", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "dendritic cells", "title": "Weight: 1", "to": "ulk1", "value": 1}, {"from": "dendritic cells", "title": "Weight: 1", "to": "IFN-\u03b3", "value": 1}, {"from": "dendritic cells", "title": "Weight: 1", "to": "CD4", "value": 1}, {"from": "B cell", "title": "Weight: 1", "to": "atg16l1", "value": 1}, {"from": "B cell", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "B cell", "title": "Weight: 1", "to": "rapamycin", "value": 1}, {"from": "B cell", "title": "Weight: 1", "to": "mtor", "value": 1}, {"from": "B cell", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "B cell", "title": "Weight: 1", "to": "ulk1", "value": 1}, {"from": "DCs", "title": "Weight: 1", "to": "atg16l1", "value": 1}, {"from": "DCs", "title": "Weight: 1", "to": "ampk", "value": 1}, {"from": "DCs", "title": "Weight: 1", "to": "rapamycin", "value": 1}, {"from": "DCs", "title": "Weight: 1", "to": "mtor", "value": 1}, {"from": "DCs", "title": "Weight: 1", "to": "atg", "value": 1}, {"from": "DCs", "title": "Weight: 1", "to": "ulk1", "value": 1}, {"from": "atg16l1", "title": "Weight: 1", "to": "autoimmune", "value": 1}, {"from": "rapamycin", "title": "Weight: 1", "to": "lupus", "value": 1}, {"from": "mtor", "title": "Weight: 1", "to": "helios", "value": 1}, {"from": "mtor", "title": "Weight: 1", "to": "lupus", "value": 1}, {"from": "mtor", "title": "Weight: 1", "to": "STAT3", "value": 1}, {"from": "ulk1", "title": "Weight: 1", "to": "autoimmunity", "value": 1}, {"from": "ulk1", "title": "Weight: 1", "to": "cancer", "value": 1}, {"from": "infectious", "title": "Weight: 1", "to": "neutrophil", "value": 1}, {"from": "neutrophil", "title": "Weight: 1", "to": "antibody", "value": 1}, {"from": "neutrophil", "title": "Weight: 1", "to": "infection", "value": 1}, {"from": "cancer", "title": "Weight: 1", "to": "neutrophils", "value": 1}, {"from": "cancer", "title": "Weight: 2", "to": "regulatory T cells", "value": 2}, {"from": "cancer", "title": "Weight: 2", "to": "regulatory t cells", "value": 2}, {"from": "cancer", "title": "Weight: 1", "to": "PD-1", "value": 1}, {"from": "cancer", "title": "Weight: 1", "to": "pd-1", "value": 1}, {"from": "cancer", "title": "Weight: 1", "to": "immunosuppression", "value": 1}, {"from": "cancer", "title": "Weight: 1", "to": "immune tolerance", "value": 1}, {"from": "neutrophils", "title": "Weight: 1", "to": "autoimmune", "value": 1}, {"from": "neutrophils", "title": "Weight: 1", "to": "TNF-\u03b1", "value": 1}, {"from": "neutrophils", "title": "Weight: 1", "to": "antibody", "value": 1}, {"from": "neutrophils", "title": "Weight: 1", "to": "infection", "value": 1}, {"from": "neutrophils", "title": "Weight: 1", "to": "lupus", "value": 1}, {"from": "autoimmune", "title": "Weight: 1", "to": "CD4", "value": 1}, {"from": "autoimmune", "title": "Weight: 3", "to": "regulatory T cells", "value": 3}, {"from": "autoimmune", "title": "Weight: 3", "to": "regulatory t cells", "value": 3}, {"from": "autoimmune", "title": "Weight: 1", "to": "macroautophagy", "value": 1}, {"from": "autoimmune", "title": "Weight: 1", "to": "cytokine", "value": 1}, {"from": "autoimmune", "title": "Weight: 1", "to": "autophagic", "value": 1}, {"from": "autoimmune", "title": "Weight: 1", "to": "immunosuppression", "value": 1}, {"from": "autoimmune", "title": "Weight: 2", "to": "PD-1", "value": 2}, {"from": "autoimmune", "title": "Weight: 2", "to": "pd-1", "value": 2}, {"from": "autoimmune", "title": "Weight: 1", "to": "IFN-\u03b3", "value": 1}, {"from": "infection", "title": "Weight: 2", "to": "antibody", "value": 2}, {"from": "infection", "title": "Weight: 1", "to": "mitophagy", "value": 1}, {"from": "infection", "title": "Weight: 3", "to": "CD4", "value": 3}, {"from": "infection", "title": "Weight: 1", "to": "CD4+", "value": 1}, {"from": "infection", "title": "Weight: 1", "to": "lymphocytes", "value": 1}, {"from": "infection", "title": "Weight: 1", "to": "CD8", "value": 1}, {"from": "infection", "title": "Weight: 3", "to": "IFN-\u03b3", "value": 3}, {"from": "infection", "title": "Weight: 1", "to": "IL-1\u03b2", "value": 1}, {"from": "infection", "title": "Weight: 1", "to": "autophagic", "value": 1}, {"from": "infection", "title": "Weight: 1", "to": "lymphocyte", "value": 1}, {"from": "infection", "title": "Weight: 1", "to": "immunosuppression", "value": 1}, {"from": "infection", "title": "Weight: 1", "to": "dendritic cell", "value": 1}, {"from": "lymphocytes", "title": "Weight: 3", "to": "CD4", "value": 3}, {"from": "lymphocytes", "title": "Weight: 1", "to": "arthritis", "value": 1}, {"from": "CD8", "title": "Weight: 2", "to": "pd-1", "value": 2}, {"from": "CD8", "title": "Weight: 1", "to": "regulatory T cells", "value": 1}, {"from": "CD8", "title": "Weight: 1", "to": "regulatory t cells", "value": 1}, {"from": "CD8", "title": "Weight: 1", "to": "il-10", "value": 1}, {"from": "CD8", "title": "Weight: 1", "to": "CD8+", "value": 1}, {"from": "mitophagy", "title": "Weight: 1", "to": "CD25", "value": 1}, {"from": "mitophagy", "title": "Weight: 1", "to": "regulatory T cells", "value": 1}, {"from": "mitophagy", "title": "Weight: 1", "to": "regulatory t cells", "value": 1}, {"from": "regulatory T cells", "title": "Weight: 1", "to": "IL-10", "value": 1}, {"from": "regulatory T cells", "title": "Weight: 1", "to": "cytokine", "value": 1}, {"from": "regulatory T cells", "title": "Weight: 1", "to": "antibody", "value": 1}, {"from": "regulatory T cells", "title": "Weight: 1", "to": "transplantation", "value": 1}, {"from": "regulatory T cells", "title": "Weight: 1", "to": "gvhd", "value": 1}, {"from": "regulatory T cells", "title": "Weight: 1", "to": "autoimmunity", "value": 1}, {"from": "regulatory T cells", "title": "Weight: 4", "to": "CD25", "value": 4}, {"from": "regulatory T cells", "title": "Weight: 3", "to": "CD4", "value": 3}, {"from": "regulatory T cells", "title": "Weight: 1", "to": "PD-1", "value": 1}, {"from": "regulatory T cells", "title": "Weight: 1", "to": "IL-6", "value": 1}, {"from": "regulatory T cells", "title": "Weight: 1", "to": "TGF-\u03b2", "value": 1}, {"from": "regulatory T cells", "title": "Weight: 1", "to": "arthritis", "value": 1}, {"from": "regulatory t cells", "title": "Weight: 1", "to": "IL-10", "value": 1}, {"from": "regulatory t cells", "title": "Weight: 1", "to": "cytokine", "value": 1}, {"from": "regulatory t cells", "title": "Weight: 1", "to": "antibody", "value": 1}, {"from": "regulatory t cells", "title": "Weight: 1", "to": "transplantation", "value": 1}, {"from": "regulatory t cells", "title": "Weight: 1", "to": "gvhd", "value": 1}, {"from": "regulatory t cells", "title": "Weight: 1", "to": "autoimmunity", "value": 1}, {"from": "regulatory t cells", "title": "Weight: 4", "to": "CD25", "value": 4}, {"from": "regulatory t cells", "title": "Weight: 3", "to": "CD4", "value": 3}, {"from": "regulatory t cells", "title": "Weight: 1", "to": "PD-1", "value": 1}, {"from": "regulatory t cells", "title": "Weight: 1", "to": "IL-6", "value": 1}, {"from": "regulatory t cells", "title": "Weight: 1", "to": "TGF-\u03b2", "value": 1}, {"from": "regulatory t cells", "title": "Weight: 1", "to": "arthritis", "value": 1}, {"from": "atg5", "title": "Weight: 2", "to": "asthma", "value": 2}, {"from": "atg5", "title": "Weight: 1", "to": "lymphocyte", "value": 1}, {"from": "PD-1", "title": "Weight: 9", "to": "pd-1", "value": 9}, {"from": "PD-1", "title": "Weight: 1", "to": "il-10", "value": 1}, {"from": "pd-1", "title": "Weight: 2", "to": "IL-6", "value": 2}, {"from": "pd-1", "title": "Weight: 2", "to": "TGF-\u03b2", "value": 2}, {"from": "pd-1", "title": "Weight: 1", "to": "CD4", "value": 1}, {"from": "pd-1", "title": "Weight: 1", "to": "IL-10", "value": 1}, {"from": "CTLA-4", "title": "Weight: 1", "to": "ctla-4", "value": 1}, {"from": "autoimmunity", "title": "Weight: 1", "to": "IL-6", "value": 1}, {"from": "autoimmunity", "title": "Weight: 1", "to": "atg7", "value": 1}, {"from": "autoimmunity", "title": "Weight: 1", "to": "IL-10", "value": 1}, {"from": "autoimmunity", "title": "Weight: 1", "to": "il-10", "value": 1}, {"from": "autoimmunity", "title": "Weight: 1", "to": "immune tolerance", "value": 1}, {"from": "autoimmunity", "title": "Weight: 1", "to": "self-tolerance", "value": 1}, {"from": "CD4", "title": "Weight: 11", "to": "CD4+", "value": 11}, {"from": "CD4", "title": "Weight: 1", "to": "asthma", "value": 1}, {"from": "CD4", "title": "Weight: 1", "to": "lymphocyte", "value": 1}, {"from": "CD4", "title": "Weight: 4", "to": "CD25", "value": 4}, {"from": "CD4", "title": "Weight: 1", "to": "B cells", "value": 1}, {"from": "CD4", "title": "Weight: 1", "to": "monocytes", "value": 1}, {"from": "CD4", "title": "Weight: 2", "to": "cd4+cd25+", "value": 2}, {"from": "CD4", "title": "Weight: 1", "to": "immunosuppression", "value": 1}, {"from": "CD4", "title": "Weight: 2", "to": "CD4+CD25+", "value": 2}, {"from": "CD4", "title": "Weight: 1", "to": "rejection", "value": 1}, {"from": "cytokine", "title": "Weight: 1", "to": "eosinophils", "value": 1}, {"from": "cytokine", "title": "Weight: 1", "to": "eosinophil", "value": 1}, {"from": "cytokine", "title": "Weight: 1", "to": "il-10", "value": 1}, {"from": "cytokine", "title": "Weight: 1", "to": "CD4+", "value": 1}, {"from": "cytokine", "title": "Weight: 1", "to": "lymphocyte", "value": 1}, {"from": "IFN-\u03b3", "title": "Weight: 1", "to": "CD4+", "value": 1}, {"from": "IFN-\u03b3", "title": "Weight: 1", "to": "B cells", "value": 1}, {"from": "IFN-\u03b3", "title": "Weight: 1", "to": "monocytes", "value": 1}, {"from": "antibody", "title": "Weight: 1", "to": "B cells", "value": 1}, {"from": "eosinophils", "title": "Weight: 2", "to": "allergic", "value": 2}, {"from": "IL-6", "title": "Weight: 1", "to": "lupus", "value": 1}, {"from": "IL-6", "title": "Weight: 3", "to": "il-10", "value": 3}, {"from": "IL-10", "title": "Weight: 1", "to": "eosinophil", "value": 1}, {"from": "IL-10", "title": "Weight: 9", "to": "il-10", "value": 9}, {"from": "IL-10", "title": "Weight: 1", "to": "lupus", "value": 1}, {"from": "il-10", "title": "Weight: 2", "to": "atg7", "value": 2}, {"from": "il-10", "title": "Weight: 1", "to": "lupus", "value": 1}, {"from": "il-10", "title": "Weight: 1", "to": "TGF-\u03b2", "value": 1}, {"from": "suppressive", "title": "Weight: 1", "to": "transplantation", "value": 1}, {"from": "suppressive", "title": "Weight: 2", "to": "gvhd", "value": 2}, {"from": "lymphocyte", "title": "Weight: 1", "to": "asthma", "value": 1}, {"from": "autophagic", "title": "Weight: 1", "to": "CD4+", "value": 1}, {"from": "autophagic", "title": "Weight: 1", "to": "rejection", "value": 1}, {"from": "gvhd", "title": "Weight: 1", "to": "atg7", "value": 1}, {"from": "atg7", "title": "Weight: 1", "to": "lupus", "value": 1}, {"from": "immunosuppression", "title": "Weight: 2", "to": "CD25", "value": 2}, {"from": "CD25", "title": "Weight: 4", "to": "CD25", "value": 4}, {"from": "CD25", "title": "Weight: 4", "to": "cd4+cd25+", "value": 4}, {"from": "CD25", "title": "Weight: 4", "to": "CD4+CD25+", "value": 4}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"physics": {"enabled": true, "stabilization": {"iterations": 50, "updateInterval": 100, "fit": true}, "barnesHut": {"gravitationalConstant": -1000, "springLength": 150, "springConstant": 0.02, "damping": 0.09, "avoidOverlap": 0.5}}, "nodes": {"scaling": {"min": 5, "max": 30}, "shape": "dot"}, "edges": {"smooth": false, "scaling": {"min": 1, "max": 3}}, "interaction": {"hideEdgesOnDrag": true, "hideNodesOnDrag": false, "navigationButtons": true, "keyboard": true, "hover": true}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+                    network.on("selectNode", neighbourhoodHighlight);
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
