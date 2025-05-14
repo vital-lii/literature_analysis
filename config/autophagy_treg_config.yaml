@@ -86,7 +86,7 @@ entities: #都可以修改
     - transplantation
     - GVHD
     - graft-versus-host
-    - rejection
+    
 
   cell_types:
     - T cell
@@ -121,15 +121,15 @@ entities: #都可以修改
 # 关系定义
 relations:
   activates:
-    variants: [activates, activate, activating, activated, activation, induces, induce, inducing, induced, induction, upregulates, upregulate, upregulating, upregulated, upregulation, promotes, promote, promoting, promoted, promotion, stimulates, stimulate, stimulating, stimulated, stimulation, enhances, enhance, enhancing, enhanced, enhancement]
+    variants: [activates, activate, activating, activated, activation, induces, induce, inducing, induced, induction]
     type: "positive_regulation"
     
   inhibits:
-    variants: [inhibits, inhibit, inhibiting, inhibited, inhibition, suppresses, suppress, suppressing, suppressed, suppression, blocks, block, blocking, blocked, blockade, decreases, decrease, decreasing, decreased, downregulates, downregulate, downregulating, downregulated, downregulation, represses, repress, repressing, repressed, repression]
+    variants: [inhibits, inhibit, inhibiting, inhibited, inhibition, suppresses, suppress, suppressing, suppressed, suppression]
     type: "negative_regulation"
     
   regulates:
-    variants: [regulates, regulate, regulating, regulated, regulation, modulates, modulate, modulating, modulated, modulation, controls, control, controlling, controlled, mediates, mediate, mediating, mediated, mediation]
+    variants: [regulates, regulate, regulating, regulated, regulation, controls, control, controlling, controlled]
     type: "regulation"
 
   associated_with:
@@ -142,7 +142,7 @@ relations:
 
 performance:
   entity_recognition:
-    max_term_length: 45
+    max_term_length: 25
     nested_entity_handling: merge
     priority_order:
       - treg_terms
@@ -151,8 +151,41 @@ performance:
       - cell_types
       - molecules
 
+# 向量编码相关配置
+embedding:
+  # 是否启用向量编码
+  enabled: true
+  # 使用轻量级模型
+  model: 'huawei-noah/TinyBERT_General_4L_312D'
+  # 更新维度设置
+  dimension: 312
+  # GPU加速
+  use_gpu: true
+  # 指定本地模型路径（推荐使用本地模型，避免网络问题）
+  local_model_path: "./models/tinybert"
+  # 编码缓存
+  cache:
+    # 是否缓存编码结果到文件
+    enabled: true
+    # 缓存文件路径（相对于knowledge_graph目录）
+    file: "entity_embeddings.npz"
+  # 可视化设置
+  visualization:
+    # 是否生成向量可视化
+    enabled: true
+    # 输出文件路径
+    output_file: "output/knowledge_graph/embeddings_visualization.png"
+    # 降维方法，可选: 'pca', 't-sne', 'umap'
+    dimension_reduction: 'pca'
+  # 相似度设置
+  similarity:
+    # 相似度阈值，用于推断实体间潜在关系
+    threshold: 0.6
+    # 是否推断新关系
+    infer_new_relations: true
+
 visualization:
-  node_size_formula: "log(weight) * 8 + 5"
+  node_size_formula: "log(weight) * 10"
   edge_width_range: [1, 5]
   
   color_scheme:
@@ -181,7 +214,6 @@ visualization:
       smooth: false
       arrows: false
       dashes: false
-
   title: "自噬与调节性T细胞关系知识图谱"
   subtitle: "基于科学文献分析"
   description: "本知识图谱展示了自噬相关组分与调节性T细胞之间的潜在联系和相互作用，数据来源于PubMed文献" 

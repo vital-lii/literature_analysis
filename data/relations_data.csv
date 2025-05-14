@@ -1,0 +1,36 @@
+source_entity,target_entity,relation_type
+AMPK,autophagy,positive_regulation
+mTOR,autophagy,negative_regulation
+mTORC1,Treg,negative_regulation
+FOXP3,Treg,positive_regulation
+LC3,FOXP3,positive_regulation
+IL-2,T cell,positive_regulation
+inflammation,autoimmune,association
+ULK1,Treg,association
+T cell,Treg,conversion
+LC3,autophagosome,association
+rapamycin,mTOR,negative_regulation
+FOXP3,CD25,regulation
+CTLA-4,T cell activation,negative_regulation
+TNF-α,Treg,negative_regulation
+IL-10,Treg,positive_regulation
+TGF-β,Treg,positive_regulation
+Beclin1,autophagy,positive_regulation
+chloroquine,autophagy,negative_regulation
+bafilomycin,autophagy,negative_regulation
+p53,autophagy,regulation
+ATG14,Treg,positive_regulation
+ATG7,Treg,positive_regulation
+autoimmune disease,Treg,negative_regulation
+colitis,inflammation,association
+IL-17,inflammation,positive_regulation
+diabetes,autoimmune,association
+arthritis,Treg,negative_regulation
+metformin,AMPK,positive_regulation
+sirolimus,mTOR,negative_regulation
+hydroxychloroquine,autophagy,negative_regulation
+glucocorticoid,inflammation,negative_regulation
+autophagy,apoptosis,regulation
+p62,LC3,association
+FOXP3,IL-10,positive_regulation
+mitophagy,inflammation,negative_regulation

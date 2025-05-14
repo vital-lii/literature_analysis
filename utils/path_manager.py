@@ -5,6 +5,7 @@ class PathManager:
     """路径管理器"""
     
     def __init__(self, config_file="config.yaml"):
+        self.config_file = config_file  # 保存配置文件路径作为属性
         with open(config_file, 'r', encoding='utf-8') as f:
             self.config = yaml.safe_load(f)
             

@@ -1,0 +1,4 @@
+2025-05-14 19:57:58,801 - INFO - Load pretrained SentenceTransformer: ./models/tinybert
+2025-05-14 19:57:58,801 - WARNING - No sentence-transformers model found with name ./models/tinybert. Creating a new one with mean pooling.
+2025-05-14 19:57:59,138 - INFO - Load pretrained SentenceTransformer: ./models/tinybert
+2025-05-14 19:57:59,138 - WARNING - No sentence-transformers model found with name ./models/tinybert. Creating a new one with mean pooling.
