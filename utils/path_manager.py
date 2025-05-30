@@ -10,7 +10,7 @@ class PathManager:
             self.config = yaml.safe_load(f)
             
     def ensure_dirs(self):
-        """确保所有必要的目录存在"""
+        """确保所有必要的目录存在""" 
         dirs = [
             self.config['paths']['logs'],
             self.config['paths']['output'],

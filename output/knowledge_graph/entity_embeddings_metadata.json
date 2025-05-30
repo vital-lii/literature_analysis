@@ -1,6 +1,6 @@
 {
   "model_name": "huawei-noah/TinyBERT_General_4L_312D",
   "embedding_dim": 312,
-  "entity_count": 110,
+  "entity_count": 120,
   "relation_count": 0
 }

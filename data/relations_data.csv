@@ -34,3 +34,11 @@ autophagy,apoptosis,regulation
 p62,LC3,association
 FOXP3,IL-10,positive_regulation
 mitophagy,inflammation,negative_regulation
+HDAC3,Treg,positive_regulation
+HDAC3,FOXP3,positive_regulation
+HDAC3,autophagy,regulation
+HDAC3,mTOR,positive_regulation
+HDAC3,inflammation,negative_regulation
+SIRT1,HDAC3,regulation
+HDAC3,IL-10,positive_regulation
+HDAC3,TGF-β,positive_regulation

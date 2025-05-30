@@ -24,17 +24,15 @@ def test_tinybert_initialization():
     """测试TinyBERT模型初始化"""
     print("\n测试TinyBERT模型初始化...")
     
-    # 确定TinyBERT模型路径
+    
     model_path = "./models/tinybert"
     
-    # 检查模型文件是否存在
     if not os.path.exists(model_path):
         print(f"错误: 模型路径不存在: {model_path}")
         print("请确保已下载TinyBERT模型")
         return False
     
     try:
-        # 检查必要的文件
         required_files = ["config.json", "pytorch_model.bin", "vocab.txt"]
         for file in required_files:
             file_path = os.path.join(model_path, file)
@@ -43,23 +41,18 @@ def test_tinybert_initialization():
                 return False
             print(f"√ 找到文件: {file}")
         
-        # 尝试加载tokenizer
         print("\n加载tokenizer...")
         tokenizer = BertTokenizer.from_pretrained(model_path)
         print("√ Tokenizer加载成功")
         
-        # 尝试加载配置
         print("\n加载配置...")
         config = BertConfig.from_pretrained(model_path)
-        # 检查配置中是否有model_type字段，如果没有则添加
         if not hasattr(config, 'model_type'):
             print("! 配置中没有model_type字段，添加'bert'作为model_type")
             config.model_type = 'bert'
         print(f"√ 配置加载成功: {config}")
         
-        # 尝试加载模型
         print("\n加载模型...")
-        # 首先尝试创建简单的分类任务模型
         relation_types = [
             "positive_regulation", "negative_regulation", "regulation",
             "association", "conversion", "DEFAULT"
@@ -77,7 +70,6 @@ def test_tinybert_initialization():
         )
         print("√ 模型加载成功")
         
-        # 测试向前传播
         print("\n测试模型向前传播...")
         inputs = tokenizer("Test input [SEP] Second input", padding='max_length', truncation=True, max_length=128, return_tensors='pt')
         outputs = model(**inputs)
@@ -103,13 +95,10 @@ def save_fixed_config():
         return False
     
     try:
-        # 加载配置
         config = BertConfig.from_pretrained(model_path)
         
-        # 添加model_type字段
         config.model_type = 'bert'
         
-        # 保存修改后的配置
         config.save_pretrained(model_path)
         print(f"√ 修复后的配置已保存到: {config_path}")
         return True
@@ -123,9 +112,7 @@ def main():
     print("TinyBERT关系训练器测试")
     print("========================")
     
-    # 测试模型初始化
     if not test_tinybert_initialization():
-        # 如果测试失败，尝试修复配置
         if save_fixed_config():
             print("配置已修复，重新测试...")
             test_tinybert_initialization()

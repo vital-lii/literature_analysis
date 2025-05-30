@@ -24,7 +24,7 @@ class KnowledgeGraphBuilder:
         
         self.G = nx.Graph()
         
-        # 添加专业词典
+        # 自设专业词典
         self.bio_dict = {
             "CHEMICAL": {
                 "LPS", "IL-1α", "IL-1β", "IL-2", "IL-4", "IL-6", "IL-8", "IL-10", "IL-12",
@@ -69,7 +69,7 @@ class KnowledgeGraphBuilder:
         self.use_embeddings = False
         self.initialize_embedding_manager()
         
-        # 初始化关系训练器（如果可用）
+        
         self.relation_trainer = None
         try:
             from relation_trainer import RelationTrainer
@@ -176,7 +176,7 @@ class KnowledgeGraphBuilder:
                         start = sentence.find(term_lower)
                         end = start + len(term_lower)
                         
-                        # 确保这是一个完整的词（不是更大词的一部分）
+                        
                         if ((start == 0 or not sentence[start-1].isalnum()) and 
                             (end == len(sentence) or not sentence[end].isalnum())):
                             
@@ -234,8 +234,6 @@ class KnowledgeGraphBuilder:
                     if self.G.has_edge(rel["source"], rel["target"]):
                         self.G[rel["source"]][rel["target"]]["weight"] += 1
                     else:
-                        # 确定关系类型
-                        # 基于实体类型猜测可能的关系类型
                         relation_type = self._determine_relation_type(rel["source_type"], rel["target_type"], rel["source"], rel["target"])
                         
                         self.G.add_edge(
@@ -249,7 +247,7 @@ class KnowledgeGraphBuilder:
             if self.use_embeddings and self.embedding_manager:
                 self.add_node_embeddings()
                 
-                # 可选：基于向量相似度添加额外的边
+                
                 if (hasattr(self.path_manager, 'config') and 
                     'embedding' in self.path_manager.config and 
                     'similarity' in self.path_manager.config['embedding'] and
@@ -265,7 +263,7 @@ class KnowledgeGraphBuilder:
                     
                     self.embedding_manager.save_embeddings()
                 
-                # 可视化向量编码
+                # 可视化
                 if (hasattr(self.path_manager, 'config') and 
                     'embedding' in self.path_manager.config and 
                     'visualization' in self.path_manager.config['embedding'] and 
@@ -304,8 +302,8 @@ class KnowledgeGraphBuilder:
         if not self.use_embeddings or not self.embedding_manager:
             return
             
-        # 获取相似度阈值
-        threshold = 0.7  # 默认阈值
+        
+        threshold = 0.7  
         if (hasattr(self.path_manager, 'config') and 
             'embedding' in self.path_manager.config and 
             'similarity' in self.path_manager.config['embedding']):
@@ -314,7 +312,7 @@ class KnowledgeGraphBuilder:
         print(f"\n基于向量相似度(阈值={threshold})推断新的关系...")
         new_edges = 0
         
-        # 获取所有节点
+        
         nodes = list(self.G.nodes(data=True))
         
         # 计算节点对之间的相似度
@@ -463,7 +461,7 @@ class KnowledgeGraphBuilder:
             </script>
             """.format(nodes_count=len(self.G.nodes), edges_count=len(self.G.edges))
             
-            # 优化性能的配置
+            # 优化
             net.set_options("""
             {
                 "physics": {
@@ -505,7 +503,7 @@ class KnowledgeGraphBuilder:
             }
             """ % (node_shape, str(edge_smooth).lower()))
             
-            # 添加节点，设置更多属性
+            # 添加节点
             print("- Adding nodes...")
             for node in self.G.nodes(data=True):
                 size = self.G.degree(node[0]) * 2  # 减小节点大小系数
@@ -519,7 +517,7 @@ class KnowledgeGraphBuilder:
                     borderWidthSelected=node_border_width_selected
                 )
             
-            # 添加边，设置更多属性
+            # 添加边
             print("- Adding edges...")
             for edge in self.G.edges(data=True):
                 width = edge[2]['weight']  # 简化边的宽度
@@ -549,7 +547,6 @@ class KnowledgeGraphBuilder:
     
     def get_node_color(self, node_type):
         """获取节点颜色"""
-        # 默认颜色方案
         default_colors = {
             "GENE": "#ff7f0e",     # 橙色    
             "CHEMICAL": "#2ca02c", # 绿色 化学物质
@@ -558,7 +555,6 @@ class KnowledgeGraphBuilder:
             "DEFAULT": "#1f77b4"   # 蓝色  #未知未识别
         }
         
-        # 尝试从配置文件中读取颜色
         try:
             if (hasattr(self.path_manager, 'config') and 
                 'visualization' in self.path_manager.config and 
@@ -575,7 +571,6 @@ class KnowledgeGraphBuilder:
     
     def get_edge_color(self, edge_type=None):
         """获取边的颜色"""
-        # 默认边颜色方案
         default_colors = {
             "positive_regulation": "#00a300",  # 深绿色 - 激活/诱导关系
             "negative_regulation": "#cc0000",  # 深红色 - 抑制关系
@@ -583,11 +578,11 @@ class KnowledgeGraphBuilder:
             "DEFAULT": "#999999"               # 灰色 - 默认/未分类关系
         }
         
-        # 如果没有指定类型，返回默认颜色
+        # 没有指定类型，返回默认颜色
         if edge_type is None:
             return default_colors["DEFAULT"]
             
-        # 尝试从配置文件中读取颜色
+        # 从配置文件中读取颜色
         try:
             if (hasattr(self.path_manager, 'config') and 
                 'visualization' in self.path_manager.config and 
@@ -599,12 +594,11 @@ class KnowledgeGraphBuilder:
         except Exception as e:
             logging.warning(f"读取边颜色配置时出错: {str(e)}，使用默认颜色")
             
-        # 如果配置读取失败或没有该类型的颜色，返回默认颜色
+        # 返回默认颜色
         return default_colors.get(edge_type, default_colors["DEFAULT"])
     
     def get_node_style(self, style_key=None):
         """获取节点样式设置"""
-        # 默认节点样式
         default_styles = {
             "border_width": 2,
             "border_width_selected": 3,
@@ -615,7 +609,7 @@ class KnowledgeGraphBuilder:
         if style_key is None:
             return default_styles
             
-        # 尝试从配置文件中读取样式
+        # 从配置文件中读取样式
         try:
             if (hasattr(self.path_manager, 'config') and 
                 'visualization' in self.path_manager.config and 
@@ -633,18 +627,17 @@ class KnowledgeGraphBuilder:
     
     def get_edge_style(self, style_key=None):
         """获取边样式设置"""
-        # 默认边样式
         default_styles = {
             "smooth": False,
             "arrows": False,
             "dashes": False
         }
         
-        # 如果没有指定样式键，返回所有默认样式
+        # 没有指定样式键，返回所有默认样式
         if style_key is None:
             return default_styles
             
-        # 尝试从配置文件中读取样式
+        # 从配置文件中读取样式
         try:
             if (hasattr(self.path_manager, 'config') and 
                 'visualization' in self.path_manager.config and 
@@ -657,7 +650,7 @@ class KnowledgeGraphBuilder:
         except Exception as e:
             logging.warning(f"读取边样式配置时出错: {str(e)}，使用默认样式")
             
-        # 如果配置读取失败或没有该样式，返回默认样式
+        # 返回默认样式
         return default_styles.get(style_key, None)
     
     def export_graph(self, output_file=None):
@@ -723,7 +716,7 @@ class KnowledgeGraphBuilder:
                     'shape': 'solid'  # 可选: solid, dash, dotted
                 }
             
-            # 导出为GEXF格式，使用最简单的方式
+            # 导出为GEXF格式
             print(f"\n尝试导出到: {output_file}")
             nx.write_gexf(export_graph, output_file)
             print(f"Gephi格式文件已保存到: {output_file}")
@@ -777,7 +770,7 @@ class KnowledgeGraphBuilder:
             nodes = []
             for node, attrs in self.G.nodes(data=True):
                 if node in important_nodes:
-                    # 如果节点没有类型，设置默认类型
+                    # 节点没有类型，设置默认类型
                     node_type = attrs.get('node_type', 'UNKNOWN')
                     
                     # 获取节点颜色并进行检查
@@ -795,7 +788,7 @@ class KnowledgeGraphBuilder:
                         }
                     })
             
-            # 准备边数据（只包含重要边）
+            # 准备边数据
             links = [
                 {
                     'source': u,
@@ -922,7 +915,7 @@ class KnowledgeGraphBuilder:
         Returns:
             str: 关系类型，可能是 'positive_regulation', 'negative_regulation', 或 'regulation'
         """
-        # 优先使用关系分类器（如果可用且有源实体和目标实体文本）
+        # 优先使用关系分类器（
         if hasattr(self, 'relation_trainer') and self.relation_trainer and source_text and target_text:
             try:
                 relation, confidence = self.relation_trainer.predict_relation(source_text, target_text)
@@ -932,8 +925,7 @@ class KnowledgeGraphBuilder:
             except Exception as e:
                 logging.warning(f"使用关系分类器预测关系时出错: {str(e)}")
         
-        # 基于实体类型的组合确定关系类型
-        # 以下是基于生物学知识的简单规则
+        
         
         # 基因-细胞 互动通常是调控关系
         if (source_type == 'GENE' and target_type == 'CELL_TYPE') or \
@@ -943,22 +935,20 @@ class KnowledgeGraphBuilder:
         # 化学物质-基因 互动通常可能是正向或负向调控
         if (source_type == 'CHEMICAL' and target_type == 'GENE') or \
            (source_type == 'GENE' and target_type == 'CHEMICAL'):
-            # 这里简单随机分配，实际应用中应该基于文本内容分析
             import random
             return random.choice(['positive_regulation', 'negative_regulation'])
         
         # 化学物质-细胞 互动通常可能是正向或负向调控  
         if (source_type == 'CHEMICAL' and target_type == 'CELL_TYPE') or \
            (source_type == 'CELL_TYPE' and target_type == 'CHEMICAL'):
-            # 简单随机分配
             import random
             return random.choice(['positive_regulation', 'negative_regulation'])
         
         # 疾病相关的关系
         if source_type == 'DISEASE' or target_type == 'DISEASE':
-            return 'regulation'  # 通常是一般调控关系
+            return 'regulation'  
         
-        # 默认关系类型
+        
         return 'DEFAULT'
 
 def main():

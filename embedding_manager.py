@@ -21,7 +21,7 @@ import requests
 import ssl
 import warnings
 
-# 禁用特定警告
+# 警告
 warnings.filterwarnings("ignore", message=".*certificate verify failed.*")
 
 class EmbeddingManager:
@@ -45,7 +45,7 @@ class EmbeddingManager:
         self.relation_embeddings = {}
         
         # 加载配置
-        self.model_name = 'all-MiniLM-L6-v2'  # 默认轻量级模型
+        self.model_name = 'all-MiniLM-L6-v2'  # 默认轻量级模型，但不好用
         self.load_config()
         
         # 初始化编码模型
@@ -61,15 +61,14 @@ class EmbeddingManager:
             if 'embedding' in config:
                 emb_config = config['embedding']
                 
-                # 加载模型设置
+                
                 if 'model' in emb_config:
                     self.model_name = emb_config['model']
                     
-                # 加载维度设置
+                # 加载维度
                 if 'dimension' in emb_config:
                     self.embedding_dim = emb_config['dimension']
                 
-                # 其他设置...
                 
         except Exception as e:
             logging.warning(f"加载向量编码配置时出错: {str(e)}")
@@ -79,7 +78,7 @@ class EmbeddingManager:
         try:
             print(f"初始化向量编码模型: {self.model_name}")
             
-            # 尝试使用离线模型（如果配置了本地模型路径）
+            # 尝试使用离线模型（配置了本地模型路径）
             local_model_path = None
             if self.path_manager and hasattr(self.path_manager, 'config'):
                 if 'embedding' in self.path_manager.config:
@@ -101,10 +100,9 @@ class EmbeddingManager:
                 has_transformers = False
                 print("transformers 库不可用，尝试使用 SentenceTransformer")
             
-            # 如果模型名称包含"/"，可能是Hugging Face模型库的路径，尝试直接下载
+            
             if has_transformers and "/" in self.model_name:
                 try:
-                    # 使用transformers直接加载模型，设置禁用SSL验证的选项
                     download_kwargs = {}
                     
                     tokenizer = AutoTokenizer.from_pretrained(self.model_name, **download_kwargs)
@@ -227,10 +225,9 @@ class EmbeddingManager:
                 return embedding
             except Exception as e:
                 logging.warning(f"获取关系的向量编码时出错: {str(e)}")
-        
-        # 如果模型加载失败或编码出错，返回随机向量
+    
         random_vector = np.random.normal(0, 0.1, self.embedding_dim)
-        random_vector = random_vector / np.linalg.norm(random_vector)  # 归一化
+        random_vector = random_vector / np.linalg.norm(random_vector)  
         self.relation_embeddings[cache_key] = random_vector
         return random_vector
     
@@ -320,7 +317,7 @@ class EmbeddingManager:
         if not entity_texts:
             return
             
-        # 确保entity_types与entity_texts长度一致
+        
         if entity_types is None:
             entity_types = [None] * len(entity_texts)
         elif len(entity_types) != len(entity_texts):
@@ -395,7 +392,7 @@ class EmbeddingManager:
         )
         print(f"Embeddings saved to: {output_file}")
         
-        # 同时保存元数据
+        # 保存元数据
         metadata = {
             "model_name": self.model_name,
             "embedding_dim": self.embedding_dim,

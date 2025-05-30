@@ -59,10 +59,10 @@ class RelationTrainer:
             config_file: 配置文件路径
             model_dir: 模型保存目录
         """
-        # 初始化嵌入管理器
+        # 初始化
         self.embedding_manager = EmbeddingManager(config_file)
         
-        # 创建模型目录
+        # 建模型目录
         Path(model_dir).mkdir(parents=True, exist_ok=True)
         self.model_dir = model_dir
         
@@ -96,19 +96,19 @@ class RelationTrainer:
             
             # 如果没有找到有效的本地路径，尝试固定路径
             if not model_path or not os.path.isdir(model_path):
-                # 尝试直接使用绝对路径
+                # 绝对路径
                 abs_path = "D:/article_tho/copd_inhalation_tcm/liter_ana/models/tinybert"
                 if os.path.isdir(abs_path):
                     model_path = abs_path
                     print(f"使用绝对模型路径: {model_path}")
                 else:
-                    # 尝试相对路径
+                    # 相对路径
                     rel_path = "./models/tinybert"
                     if os.path.isdir(rel_path):
                         model_path = rel_path
                         print(f"使用相对模型路径: {model_path}")
             
-            # 如果仍然没有找到模型路径，使用模型名称
+            # 没有找到模型路径，使用模型名称
             if not model_path or not os.path.isdir(model_path):
                 model_name = getattr(self.embedding_manager, 'model_name', None)
                 model_path = model_name
@@ -153,7 +153,7 @@ class RelationTrainer:
                 )
                 print("√ 模型初始化成功")
             else:
-                # 如果没有有效的模型路径
+                # 没有有效的模型路径反馈
                 print(f"错误: 无法找到有效的模型路径或目录")
                 raise ValueError("请确保本地模型目录存在并包含必要文件，或使用test_relation_trainer.py下载并修复TinyBERT模型")
             
@@ -189,7 +189,7 @@ class RelationTrainer:
             self.train_texts = []
             self.train_labels = []
             
-            # 如果提供了数据文件，从文件加载
+            # 提供了数据文件，从文件加载
             if data_file and os.path.exists(data_file):
                 print(f"从文件加载训练数据: {data_file}")
                 df = pd.read_csv(data_file)
@@ -199,7 +199,7 @@ class RelationTrainer:
                     self.train_texts.append(text)
                     self.train_labels.append(label)
             
-            # 如果提供了自定义示例，添加到训练数据
+            
             if custom_examples:
                 print(f"添加 {len(custom_examples)} 个自定义训练示例")
                 for source, relation, target in custom_examples:
@@ -208,7 +208,7 @@ class RelationTrainer:
                     self.train_texts.append(text)
                     self.train_labels.append(label)
             
-            # 如果没有数据，添加一些基本示例
+            # 没有数据，添加一些基本示例
             if not self.train_texts:
                 print("没有提供训练数据，添加基本示例...")
                 basic_examples = [
@@ -263,18 +263,18 @@ class RelationTrainer:
             return None
         
         try:
-            # 更新优化器导入
+            # 更新
             from torch.optim import AdamW
             from transformers import get_linear_schedule_with_warmup
             
-            # 创建数据集和数据加载器
+            # 建数据集和数据加载器
             train_dataset = RelationDataset(self.train_texts, self.train_labels, self.tokenizer)
             val_dataset = RelationDataset(self.val_texts, self.val_labels, self.tokenizer)
             
             train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
             val_dataloader = DataLoader(val_dataset, batch_size=batch_size)
             
-            # 设置优化器和学习率调度器
+            
             optimizer = AdamW(self.model.parameters(), lr=learning_rate)
             num_training_steps = len(train_dataloader) * epochs
             scheduler = get_linear_schedule_with_warmup(
@@ -296,7 +296,7 @@ class RelationTrainer:
                     # 将数据移至设备
                     batch = {k: v.to(self.device) for k, v in batch.items()}
                     
-                    # 前向传播
+                    # 传播
                     outputs = self.model(**batch)
                     loss = outputs.loss
                     total_loss += loss.item()
@@ -414,7 +414,6 @@ class RelationTrainer:
             print("模型未初始化，无法预测")
             return "DEFAULT", 0.0
         
-        # 准备输入
         text = f"{source_entity} [SEP] {target_entity}"
         inputs = self.tokenizer(
             text,

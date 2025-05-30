@@ -23,10 +23,9 @@ def main():
     parser.add_argument('-t', '--test', action='store_true', help='是否运行测试预测')
     args = parser.parse_args()
     
-    # 初始化关系训练器
+    
     trainer = RelationTrainer(config_file=args.config)
     
-    # 准备一些示例数据
     examples = [
         ("AMPK", "positive_regulation", "autophagy"),
         ("mTOR", "negative_regulation", "autophagy"),
@@ -39,7 +38,6 @@ def main():
         ("FOXP3", "regulation", "CD25"),
         ("CTLA-4", "negative_regulation", "T cell activation"),
         
-        # 添加更多生物学关系示例
         ("p62", "association", "autophagy"),
         ("ATG5", "positive_regulation", "autophagosome"),
         ("STAT3", "positive_regulation", "Treg"),
@@ -52,10 +50,8 @@ def main():
         ("p53", "regulation", "autophagy")
     ]
     
-    # 准备训练数据
     trainer.prepare_training_data(data_file=args.data, custom_examples=examples)
     
-    # 训练模型
     print(f"开始训练关系模型，共 {args.epochs} 轮...")
     results = trainer.train(epochs=args.epochs, batch_size=args.batch_size)
     
@@ -65,7 +61,6 @@ def main():
         print("训练失败")
         sys.exit(1)
     
-    # 如果需要，运行测试预测
     if args.test:
         test_pairs = [
             ("p53", "autophagy"),

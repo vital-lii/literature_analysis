@@ -24,7 +24,6 @@ from nltk.stem import WordNetLemmatizer
 from knowledge_graph import KnowledgeGraphBuilder
 from utils.path_manager import PathManager
 
-# 默认配置文件和CSV文件路径
 DEFAULT_CONFIG_FILE = "config/autophagy_treg_config.yaml"
 DEFAULT_CSV_FILE = "data/Autophagy_Treg_literature.csv"
 
@@ -41,20 +40,18 @@ def parse_arguments():
                         help='显示详细信息')
     return parser.parse_args()
 
-# 配置路径管理器
 CONFIG_FILE = DEFAULT_CONFIG_FILE
 path_manager = None
 config_data = None
 
 try:
-    # 加载配置文件
     with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
         config_data = yaml.safe_load(f)
     path_manager = PathManager(CONFIG_FILE)
     print(f"Config file loaded: {CONFIG_FILE}")
 except Exception as e:
     print(f"Could not load config file: {e}")
-    # 创建默认配置
+    
     create_config_if_not_exists(CONFIG_FILE)
     try:
         with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
@@ -63,11 +60,11 @@ except Exception as e:
         print(f"Created and loaded default config: {CONFIG_FILE}")
     except Exception as e:
         print(f"Failed to create or load default config: {e}")
-        # 使用内部默认配置
+        
         path_manager = None
         config_data = None
 
-# Ensure NLTK data path is correctly set
+
 nltk.data.path.insert(0, "nltk")
 print(f"NLTK data path: {nltk.data.path}")
 
@@ -82,9 +79,9 @@ class SimpleAnalyzer:
         self.lemmatizer = WordNetLemmatizer()
         self.config = config if config else config_data
         
-        # Load custom stopwords
+        
         self.stop_words = set(stopwords.words('english'))
-        # Add custom stopwords
+        
         self.custom_stopwords = {
             "study", "studies", "result", "results", "method", "methods",
             "figure", "table", "data", "analysis", "analyzed", "et", "al",
@@ -96,9 +93,7 @@ class SimpleAnalyzer:
         }
         self.stop_words.update(self.custom_stopwords)
         
-        # Load terms from config file
         if self.config and 'entities' in self.config:
-            # Autophagy-related terms
             if 'autophagy_terms' in self.config['entities']:
                 self.autophagy_terms = set([term.lower() for term in self.config['entities']['autophagy_terms']])
             else:
@@ -109,7 +104,6 @@ class SimpleAnalyzer:
                     "autophagosome", "lysosome", "mtor", "ampk", "rapamycin", "bafilomycin"
                 }
             
-            # Regulatory T cell related terms
             if 'treg_terms' in self.config['entities']:
                 self.treg_terms = set([term.lower() for term in self.config['entities']['treg_terms']])
             else:
@@ -120,7 +114,6 @@ class SimpleAnalyzer:
                     "suppressive", "t-regulatory", "immune tolerance", "self-tolerance"
                 }
             
-            # Disease-related terms
             if 'disease_terms' in self.config['entities']:
                 self.disease_terms = set([term.lower() for term in self.config['entities']['disease_terms']])
             else:
@@ -129,7 +122,6 @@ class SimpleAnalyzer:
                     "allergy", "asthma", "colitis", "arthritis"
                 }
         else:
-            # Default term sets
             self.autophagy_terms = {
                 "autophagy", "autophagic", "autophagosomes", "autolysosome", 
                 "macroautophagy", "mitophagy", "pexophagy", "microautophagy",
@@ -149,7 +141,6 @@ class SimpleAnalyzer:
                 "allergy", "asthma", "colitis", "arthritis"
             }
         
-        # Load relation terms from config file
         if self.config and 'relations' in self.config:
             self.relation_terms = {}
             for rel_type, rel_data in self.config['relations'].items():
@@ -157,7 +148,6 @@ class SimpleAnalyzer:
                     for variant in rel_data['variants']:
                         self.relation_terms[variant.lower()] = rel_type
         else:
-            # Interaction terms
             self.interaction_terms = {
                 "regulate", "regulates", "regulated", "regulating", "regulation",
                 "induce", "induces", "induced", "inducing", "induction",
@@ -175,7 +165,6 @@ class SimpleAnalyzer:
             self.df = pd.read_csv(self.csv_file)
             print(f"Loaded {len(self.df)} publications")
             
-            # Basic data analysis
             self.analyze_basic_stats()
             
             return True
@@ -189,17 +178,14 @@ class SimpleAnalyzer:
             print("Please load data first")
             return
         
-        # Display basic information
         print("\nBasic Information:")
         print(f"- Number of publications: {len(self.df)}")
         
-        # Year distribution
         if 'Year' in self.df.columns:
             years = self.df['Year'].value_counts().sort_index()
             print(f"- Year range: {years.index.min()} - {years.index.max()}")
             print(f"- Year distribution: {dict(years)}")
         
-        # Journal distribution
         if 'Journal' in self.df.columns:
             journals = self.df['Journal'].value_counts().head(10)
             print(f"- Main journals (top 10): {dict(journals)}")
@@ -209,19 +195,14 @@ class SimpleAnalyzer:
         if pd.isna(text):
             return []
         
-        # Convert text to lowercase
         text = text.lower()
         
-        # Remove HTML tags
         text = re.sub(r'<.*?>', ' ', text)
         
-        # Remove special characters and numbers
         text = re.sub(r'[^a-zA-Z\s]', ' ', text)
         
-        # Tokenize the text
         tokens = word_tokenize(text)
         
-        # Remove stopwords and lemmatize
         tokens = [self.lemmatizer.lemmatize(token) for token in tokens if token not in self.stop_words and len(token) > 2]
         
         return tokens
@@ -243,12 +224,10 @@ class SimpleAnalyzer:
         found_relations = []
         
         if hasattr(self, 'relation_terms'):
-            # Use relations defined in the config file
             for rel_term, rel_type in self.relation_terms.items():
                 if rel_term in text:
                     found_relations.append((rel_term, rel_type))
         else:
-            # Use default interaction terms
             for term in self.interaction_terms:
                 if term in text:
                     found_relations.append(term)
@@ -269,7 +248,6 @@ class SimpleAnalyzer:
                 
             abstract = row['Abstract'].lower()
             
-            # Check if abstract contains both autophagy and Treg terms
             autophagy_entities = self.find_entity_in_text(abstract, self.autophagy_terms)
             treg_entities = self.find_entity_in_text(abstract, self.treg_terms)
             
@@ -294,7 +272,7 @@ class SimpleAnalyzer:
                         }
                         connections.append(connection_info)
         
-        # Create results DataFrame
+        
         connections_df = pd.DataFrame(connections)
         
         if not connections_df.empty:
@@ -302,7 +280,7 @@ class SimpleAnalyzer:
             connections_df.to_csv("autophagy_treg_connections.csv", index=False)
             print("Connections saved to: autophagy_treg_connections.csv")
             
-            # Analyze relation type distribution
+            
             relation_counts = Counter()
             for _, row in connections_df.iterrows():
                 if isinstance(row['Relations'], list):
@@ -326,10 +304,8 @@ class SimpleAnalyzer:
             print("Please load data first")
             return None
         
-        # Create data format needed for knowledge graph
         kg_data = self.df.copy()
         
-        # Save to intermediate file
         output_file = "data/analyzed_literature.csv"
         kg_data.to_csv(output_file, index=False)
         print(f"Knowledge graph input data saved to: {output_file}")
@@ -344,32 +320,25 @@ class SimpleAnalyzer:
         """
         global CONFIG_FILE
         
-        # Prepare data
         data_file = self.prepare_data_for_knowledge_graph()
         if data_file is None:
             return
         
-        # Build knowledge graph
         print("\nBuilding knowledge graph using dictionary-based entity extraction...")
         builder = KnowledgeGraphBuilder(CONFIG_FILE)
         builder.build_graph(data_file)
         
-        # Only continue if graph building was successful
         if len(builder.G.nodes) > 0:
             print("\nKnowledge graph construction completed!")
             print(f"- Number of nodes: {len(builder.G.nodes)}")
             print(f"- Number of edges: {len(builder.G.edges)}")
-            
-            # Ask if user wants to visualize the graph
+
             visualize = input("Do you want to generate interactive visualizations? (y/n): ").lower().strip()
             if visualize == 'y':
-                # Generate HTML visualization
                 builder.visualize_graph()
                 
-                # Export to ECharts format
                 builder.export_for_echarts()
             
-            # Always export to Gephi format for further analysis
             builder.export_graph()
             
         else:
@@ -497,19 +466,17 @@ def setup_environment(args):
     """设置运行环境"""
     global path_manager, config_data, CONFIG_FILE
     
-    # 确定配置文件路径
     if args.config:
         CONFIG_FILE = args.config
     
     try:
-        # 加载配置文件
         with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
             config_data = yaml.safe_load(f)
         path_manager = PathManager(CONFIG_FILE)
         print(f"配置文件已加载: {CONFIG_FILE}")
     except Exception as e:
         print(f"无法加载配置文件: {e}")
-        # 创建默认配置
+        
         create_config_if_not_exists(CONFIG_FILE)
         try:
             with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
@@ -518,28 +485,24 @@ def setup_environment(args):
             print(f"已创建并加载默认配置: {CONFIG_FILE}")
         except Exception as e:
             print(f"无法创建或加载默认配置: {e}")
-            # 使用内部默认配置
+            
             path_manager = None
             config_data = None
     
-    # 确保NLTK数据路径正确设置
     print(f"NLTK数据路径: {nltk.data.path}")
     
-    # 创建必要的目录
     os.makedirs("output", exist_ok=True)
     os.makedirs("data", exist_ok=True)
     os.makedirs("logs", exist_ok=True)
     
-    # 如果指定了输出目录，更新配置
     if args.output and config_data and 'paths' in config_data:
         config_data['paths']['output'] = args.output
-        # 更新相关子目录
+        
         if 'analysis' in config_data['paths']:
             config_data['paths']['analysis']['wordcloud'] = os.path.join(args.output, "wordcloud")
             config_data['paths']['analysis']['trends'] = os.path.join(args.output, "trends")
         config_data['paths']['knowledge_graph'] = os.path.join(args.output, "knowledge_graph")
         
-        # 创建输出目录
         os.makedirs(args.output, exist_ok=True)
         os.makedirs(os.path.join(args.output, "wordcloud"), exist_ok=True)
         os.makedirs(os.path.join(args.output, "trends"), exist_ok=True)
@@ -548,10 +511,8 @@ def setup_environment(args):
 
 def main():
     """主函数"""
-    # 解析命令行参数
     args = parse_arguments()
     
-    # 设置环境
     setup_environment(args)
     
     print("=" * 50)
@@ -560,24 +521,18 @@ def main():
     print("Note: Using dictionary-based entity extraction instead of biolinkbert model")
     print("=" * 50)
     
-    # 创建必要的目录
     os.makedirs("output", exist_ok=True)
     os.makedirs("data", exist_ok=True)
     os.makedirs("logs", exist_ok=True)
     
-    # 确定输入CSV文件
     csv_file = args.input if args.input else DEFAULT_CSV_FILE
     print(f"使用输入文件: {csv_file}")
     
-    # 初始化分析器
     analyzer = SimpleAnalyzer(csv_file=csv_file, config=config_data)
     
-    # 加载数据
     if analyzer.load_data():
-        # 查找自噬和Treg之间的连接
         analyzer.find_autophagy_treg_connections()
         
-        # 是否构建知识图谱
         build_graph = input("\n是否构建知识图谱? (y/n): ").lower().strip()
         if build_graph == 'y':
             analyzer.build_knowledge_graph()

@@ -38,6 +38,7 @@ entities: #都可以修改
     - ATG7
     - ATG12
     - ATG16L1
+    - HDAC3
 
   treg_terms:
     - regulatory T cell
