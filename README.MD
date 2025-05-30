@@ -132,3 +132,6 @@ python train_main.py -d data/relations_data.csv -e 10 -t
 - **NLTK**：自然语言处理
 - **Transformers/PyTorch**：深度学习与向量表示
 - **Pandas**：数据处理
+## 感谢华为小组蒸馏的bert模型，膜拜
+原模型位于huggingface,模型名： huawei-noah/TinyBERT_General_4L_312D model
+论文参考：https://doi.org/10.48550/arXiv.1909.10351
