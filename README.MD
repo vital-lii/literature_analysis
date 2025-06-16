@@ -106,13 +106,15 @@ The system provides multiple knowledge graph formats and visualization options:
 
 ```bash
 # Run basic analysis and knowledge graph construction
-python simple_analysis.py -i data/Autophagy_Treg_literature.csv```
+python simple_analysis.py -i data/Autophagy_Treg_literature.csv
+```
 
 ### Relationship Model Training
 
 ```bash
 # Train model with custom relationship data
-python train_main.py -d data/relations_data.csv -e 10 -t```
+python train_main.py -d data/relations_data.csv -e 10 -t
+```
 
 ## System Features and Advantages
 - Modular Design: Independent functional modules for easy extension and maintenance
