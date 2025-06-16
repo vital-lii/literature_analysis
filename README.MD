@@ -1,137 +1,135 @@
-# 文献分析与知识图谱构建系统
+# Literature Analysis and Knowledge Graph Construction System
 
-## 项目概述
+## Project Overview
 
-该项目是一个专门用于分析自噬(Autophagy)和调节性T细胞(Treg)相关文献的工具，通过文本挖掘和机器学习技术构建知识图谱。系统采用模块化设计，集成了实体识别、关系提取、向量表示和知识图谱可视化等功能，并引入了基于TinyBERT模型的关系分类功能，可以预测实体间的关系类型。
+This project is a specialized tool for analyzing literature related to Autophagy and Regulatory T cells (Treg). It constructs knowledge graphs using text mining and machine learning technologies. The system features a modular design that integrates entity recognition, relationship extraction, vector representation, and knowledge graph visualization. It also includes a relationship classification function based on the TinyBERT model to predict relationship types between entities.
 
-## 系统架构
+## System Architecture
 
-整个系统由以下几个核心模块组成：
+The system consists of the following core modules:
 
-1. **数据处理与分析**：加载和处理文献数据，进行基本统计分析
-2. **实体识别**：基于词典和规则的方法识别文本中的生物医学实体
-3. **向量表示**：使用预训练语言模型为实体生成语义向量
-4. **关系提取与分类**：从文本中提取实体关系，并使用训练好的模型预测关系类型
-5. **知识图谱构建与可视化**：构建生物医学知识图谱并提供多种可视化方式
+1. **Data Processing and Analysis**: Loads and processes literature data, performs basic statistical analysis
+2. **Entity Recognition**: Identifies biomedical entities in text using dictionary and rule-based methods
+3. **Vector Representation**: Generates semantic vectors for entities using pre-trained language models
+4. **Relationship Extraction and Classification**: Extracts entity relationships from text and predicts relationship types using trained models
+5. **Knowledge Graph Construction and Visualization**: Builds biomedical knowledge graphs with multiple visualization options
 
-## 文件结构与功能
+## File Structure and Functionality
 
-### 核心执行文件
+### Core Execution Files
 
-- `simple_analysis.py`: 系统的主入口，执行文献分析和知识图谱构建的完整流程
-- `train_main.py`: 关系分类模型的训练脚本, 输入的文件需要包含source_entity,target_entity,relation_type这些列名
-- `test_relation_trainer.py`: 测试TinyBERT模型初始化和配置的辅助脚本
+- `simple_analysis.py`: Main entry point, executes the complete literature analysis and knowledge graph construction workflow
+- `train_main.py`: Training script for relationship classification models (input files require columns: source_entity, target_entity, relation_type)
+- `test_relation_trainer.py`: Helper script for testing TinyBERT model initialization and configuration
 
-### 核心功能模块
+### Core Functional Modules
 
-- `knowledge_graph.py`: 知识图谱构建器，负责实体识别、关系提取和图谱生成
-- `embedding_manager.py`: 向量编码管理器，为实体和关系生成向量表示
-- `relation_trainer.py`: 关系分类器，用于训练和预测实体间关系类型
+- `knowledge_graph.py`: Knowledge graph builder responsible for entity recognition, relationship extraction, and graph generation
+- `embedding_manager.py`: Vector encoding manager that generates vector representations for entities and relationships
+- `relation_trainer.py`: Relationship classifier for training and predicting relationship types between entities
 
-### 数据与配置
+### Data and Configuration
 
-- `config/`: 包含系统配置文件，如实体词典、关系类型和可视化设置
-- `data/`: 存放输入数据（如自定义训练文献CSV文件/搜索文献后的CSV文件）和中间处理结果
-- `models/`: 包含预训练模型和训练好的关系分类模型
-- `output/`: 存储知识图谱和可视化结果
+- `config/`: Contains system configuration files (entity dictionaries, relationship types, visualization settings)
+- `data/`: Stores input data (custom training literature CSV files/search results) and intermediate processing results
+- `models/`: Contains pre-trained models and trained relationship classification models
+- `output/`: Stores knowledge graphs and visualization results
 
-### 辅助组件
+### Auxiliary Components
 
-- `utils/`: 工具函数和辅助类，如路径管理器
-- `nltk/`: 自然语言处理资源和数据
-- `logs/`: 运行日志
+- `utils/`: Utility functions and helper classes (e.g., path manager)
+- `nltk/`: Natural language processing resources and data
+- `logs/`: Runtime logs
 
-## 运行流程
+## Workflow
 
-### 基本分析流程
+### Basic Analysis Workflow
 
-1. **初始化配置**：加载配置文件和设置运行环境
-2. **数据加载**：读取文献CSV文件
-3. **基本分析**：计算文献统计信息，如年份分布、期刊分布
-4. **实体与关系提取**：识别自噬和Treg相关实体，提取它们之间的关系
-5. **构建知识图谱**：创建网络图结构，添加节点和边
-6. **可视化输出**：生成交互式HTML可视化
+1. **Initialize Configuration**: Load configuration files and set up runtime environment
+2. **Data Loading**: Read literature CSV files
+3. **Basic Analysis**: Calculate statistical information (year distribution, journal distribution)
+4. **Entity and Relationship Extraction**: Identify autophagy and Treg-related entities and extract relationships
+5. **Build Knowledge Graph**: Create network graph structure with nodes and edges
+6. **Visualization Output**: Generate interactive HTML visualizations
 
-### 关系分类模型训练流程
+### Relationship Classification Model Training Workflow
 
-1. **准备训练数据**：从CSV加载或使用预定义的关系示例
-2. **初始化模型**：基于TinyBERT创建序列分类模型
-3. **模型训练**：通过梯度下降优化模型参数
-4. **模型评估**：使用验证集评估模型性能
-5. **模型保存**：将训练好的模型保存到指定目录
+1. **Prepare Training Data**: Load from CSV or use predefined relationship examples
+2. **Initialize Model**: Create sequence classification model based on TinyBERT
+3. **Model Training**: Optimize model parameters through gradient descent
+4. **Model Evaluation**: Assess performance using validation sets
+5. **Model Saving**: Save trained models to specified directory
 
-## 核心功能详解
+## Core Functionality Details
 
-### 1. 实体识别
+### 1. Entity Recognition
 
-系统使用词典和规则方法从文本中识别以下类型的生物医学实体：
+The system identifies the following types of biomedical entities using dictionary and rule-based methods:
 
-- 基因/蛋白质（如FOXP3、LC3、mTOR）
-- 化学物质/细胞因子（如IL-10、TGF-β）
-- 疾病/症状（如炎症、自身免疫）
-- 细胞类型（如Treg、T细胞）
+- Genes/Proteins (e.g., FOXP3, LC3, mTOR)
+- Chemical Substances/Cytokines (e.g., IL-10, TGF-β)
+- Diseases/Symptoms (e.g., Inflammation, Autoimmune disorders)
+- Cell Types (e.g., Treg, T cells)
 
-### 2. 向量表示
+### 2. Vector Representation
 
-系统使用TinyBERT模型为识别出的实体生成语义向量，实现以下功能：
+The system uses the TinyBERT model to generate semantic vectors for identified entities, enabling:
 
-- 计算实体间的语义相似度
-- 基于相似度推断潜在关系
-- 通过降维可视化实体语义空间
+- Calculation of semantic similarity between entities
+- Inference of potential relationships based on similarity
+- Visualization of entity semantic spaces through dimensionality reduction
 
-### 3. 关系分类
+### 3. Relationship Classification
 
-系统训练了一个关系分类模型，能够预测实体间的六种关系类型：
+The system trains a relationship classification model that predicts six relationship types:
 
-- `positive_regulation`: 正向调控（如激活、促进）
-- `negative_regulation`: 负向调控（如抑制、减少）
-- `regulation`: 一般调控（无明确方向）
-- `association`: 相关性（无因果关系）
-- `conversion`: 转化/转变关系
-- `DEFAULT`: 默认关系类型
+- `positive_regulation`: Positive regulation (e.g., activation, promotion)
+- `negative_regulation`: Negative regulation (e.g., inhibition, reduction)
+- `regulation`: General regulation (no specific direction)
+- `association`: Correlation (no causal relationship)
+- `conversion`: Conversion/transformation relationship
+- `DEFAULT`: Default relationship type
 
-### 4. 知识图谱构建与可视化
+### 4. Knowledge Graph Construction and Visualization
 
-系统提供多种知识图谱格式和可视化方式：
+The system provides multiple knowledge graph formats and visualization options:
 
-- 交互式HTML图谱（使用PyVis）
-- ECharts交互式可视化
-- GEXF格式导出（兼容Gephi）
+- Interactive HTML graphs (using PyVis)
+- ECharts interactive visualizations
+- GEXF format export (Gephi compatible)
 
-## 使用示例
+## Usage Examples
 
-### 基本使用
+### Basic Usage
 
-在已训练好模型的基础上使用
+(Requires pre-trained models)
 
 ```bash
-# 运行基本分析和知识图谱构建
+# Run basic analysis and knowledge graph construction
 python simple_analysis.py -i data/Autophagy_Treg_literature.csv
-```
 
-### 关系模型训练
+### Relationship Model Training
 
 ```bash
-# 使用自定义关系数据训练模型
+# Train model with custom relationship data
 python train_main.py -d data/relations_data.csv -e 10 -t
-```
 
-## 系统特点与优势
+## System Features and Advantages
+- Modular Design: Independent functional modules for easy extension and maintenance
+- Multiple Visualizations: Supports various graph visualization formats
+- Vector Semantics: Utilizes pre-trained language models to capture semantic relationships
+- Relationship Prediction: Accurate relationship classification through fine-tuned TinyBERT
+- Configurability: Most functions adjustable through configuration files
 
-1. **模块化设计**：各功能模块独立，便于扩展和维护
-2. **多种可视化**：支持多种图谱可视化格式，满足不同需求
-3. **向量语义**：利用预训练语言模型捕捉实体语义关系
-4. **关系预测**：通过微调TinyBERT实现准确的关系分类
-5. **可配置性**：大部分功能可通过配置文件调整
+## Technology Stack
+- Python: Core programming language
+- NetworkX: Network graph data structures
+- PyVis/ECharts: Interactive visualization
+- NLTK: Natural language processing
+- Transformers/PyTorch: Deep learning and vector representation
+- Pandas: Data processing
 
-## 技术栈
-
-- **Python**：核心编程语言
-- **NetworkX**：网络图数据结构
-- **PyVis/ECharts**：交互式可视化
-- **NLTK**：自然语言处理
-- **Transformers/PyTorch**：深度学习与向量表示
-- **Pandas**：数据处理
-## 感谢华为小组蒸馏的bert模型，膜拜
-原模型位于huggingface,模型名： huawei-noah/TinyBERT_General_4L_312D model
-论文参考：https://doi.org/10.48550/arXiv.1909.10351
+## Acknowledgments
+Special thanks to the Huawei team for distilling the BERT model.
+Original model available at HuggingFace: huawei-noah/TinyBERT_General_4L_312D
+Reference paper: https://doi.org/10.48550/arXiv.1909.10351
